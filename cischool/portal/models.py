@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.db import models
 
 # Create your models here.
@@ -13,7 +14,7 @@ class Slot(models.Model):
 
 
 class Instructor(models.Model):
-	username = models.CharField(max_length=50, primary_key=True)
+	user = models.ForeignKey(User)
 	name = models.CharField(max_length=50)
 
 

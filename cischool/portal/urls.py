@@ -19,11 +19,12 @@ from django.urls import path
 from portal import views
 
 urlpatterns = [
-	path('^', views.land, name='landing'),
-	path('login/^', views.login, name='login'),
-	path('register/^', views.regsiter, name='register'),
-	path('courses/^', views.courses, name='courses'),
-	path('courses/?P<pk>\d+/edit/^', views.edit_course, name='edit_course'),
-	path('mypolicies/^', views.policies, name='get_policies'),
-	path('policy/?P<pk>\d+/edit/^', views.edit_policies, name='edit_policies')
+	path('', views.land, name='landing'),
+	path('login/', views.login, name='login'),
+	path('logout/', views.logout, name='logout'),
+	path('register/', views.register, name='register'),
+	path('courses/', views.courses, name='courses'),
+	path('courses/<int:pk>/edit/', views.edit_course, name='edit_course'),
+	path('mypolicies/', views.policies, name='get_policies'),
+	path('policy/<int:pk>/edit/', views.edit_policies, name='edit_policies')
 ]
