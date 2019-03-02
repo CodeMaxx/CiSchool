@@ -27,9 +27,16 @@ class Lecture(models.Model):
 	slot = models.ForeignKey(Slot, on_delete=models.CASCADE)
 
 
+class Url(models.Model):
+	url = models.URLField()
+	id = models.IntegerField(primary_key=True)
+	name = models.CharField(max_length=50)
+	desc = models.CharField(max_length=150)
+
+
 class Rule(models.Model):
 	ip = models.CharField(max_length=15)
-	website = models.URLField()
+	url = models.ForeignKey(Url, on_delete=models.CASCADE)
 	ports = models.CharField(max_length=50)
 	action = models.CharField(max_length=15)
 
@@ -38,7 +45,7 @@ class Policy(models.Model):
 	rules = models.ManyToManyField(Rule)
 	instructor = models.ForeignKey(Instructor)
 	white = models.BooleanField()
-	
+
 
 class Course(models.Model):
 	lecture = models.ForeignKey(Lecture, on_delete=models.CASCADE)
