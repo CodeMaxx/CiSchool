@@ -16,6 +16,7 @@ class Slot(models.Model):
 class Instructor(models.Model):
 	user = models.ForeignKey(User, on_delete=models.CASCADE)
 
+
 class Student(models.Model):
 	username = models.CharField(max_length=50, primary_key=True)
 	name = models.CharField(max_length=50)
@@ -55,6 +56,7 @@ class Policy(models.Model):
 	rules = models.ManyToManyField(Rule)
 	action = models.CharField(max_length=15)
 	instructor = models.ForeignKey(Instructor, on_delete=models.CASCADE)
+
 
 class Course(models.Model):
 	lecture = models.ForeignKey(Lecture, on_delete=models.CASCADE)

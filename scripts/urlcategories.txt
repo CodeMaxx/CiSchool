@@ -1,0 +1,685 @@
+{
+  "links": {
+    "self": "https://fmcrestapisandbox.cisco.com/api/fmc_config/v1/domain/e276abec-e0f2-11e3-8169-6d9ed49b625f/object/urlcategories?offset=0&limit=84"
+  },
+  "items": [
+    {
+      "name": "Real Estate",
+      "id": "a774acd8-8240-11e0-9682-6814b504fd01",
+      "links": {
+        "self": "https://fmcrestapisandbox.cisco.com/api/fmc_config/v1/domain/e276abec-e0f2-11e3-8169-6d9ed49b625f/object/urlcategories/a774acd8-8240-11e0-9682-6814b504fd01"
+      },
+      "type": "URLCategory"
+    },
+    {
+      "name": "Computer and Internet Security",
+      "id": "a774acd8-8240-11e0-9682-6814b504fd02",
+      "links": {
+        "self": "https://fmcrestapisandbox.cisco.com/api/fmc_config/v1/domain/e276abec-e0f2-11e3-8169-6d9ed49b625f/object/urlcategories/a774acd8-8240-11e0-9682-6814b504fd02"
+      },
+      "type": "URLCategory"
+    },
+    {
+      "name": "Financial Services",
+      "id": "a774acd8-8240-11e0-9682-6814b504fd03",
+      "links": {
+        "self": "https://fmcrestapisandbox.cisco.com/api/fmc_config/v1/domain/e276abec-e0f2-11e3-8169-6d9ed49b625f/object/urlcategories/a774acd8-8240-11e0-9682-6814b504fd03"
+      },
+      "type": "URLCategory"
+    },
+    {
+      "name": "Business and Economy",
+      "id": "a774acd8-8240-11e0-9682-6814b504fd04",
+      "links": {
+        "self": "https://fmcrestapisandbox.cisco.com/api/fmc_config/v1/domain/e276abec-e0f2-11e3-8169-6d9ed49b625f/object/urlcategories/a774acd8-8240-11e0-9682-6814b504fd04"
+      },
+      "type": "URLCategory"
+    },
+    {
+      "name": "Computer and Internet Info",
+      "id": "a774acd8-8240-11e0-9682-6814b504fd05",
+      "links": {
+        "self": "https://fmcrestapisandbox.cisco.com/api/fmc_config/v1/domain/e276abec-e0f2-11e3-8169-6d9ed49b625f/object/urlcategories/a774acd8-8240-11e0-9682-6814b504fd05"
+      },
+      "type": "URLCategory"
+    },
+    {
+      "name": "Auctions",
+      "id": "a774acd8-8240-11e0-9682-6814b504fd06",
+      "links": {
+        "self": "https://fmcrestapisandbox.cisco.com/api/fmc_config/v1/domain/e276abec-e0f2-11e3-8169-6d9ed49b625f/object/urlcategories/a774acd8-8240-11e0-9682-6814b504fd06"
+      },
+      "type": "URLCategory"
+    },
+    {
+      "name": "Shopping",
+      "id": "a774acd8-8240-11e0-9682-6814b504fd07",
+      "links": {
+        "self": "https://fmcrestapisandbox.cisco.com/api/fmc_config/v1/domain/e276abec-e0f2-11e3-8169-6d9ed49b625f/object/urlcategories/a774acd8-8240-11e0-9682-6814b504fd07"
+      },
+      "type": "URLCategory"
+    },
+    {
+      "name": "Cult and Occult",
+      "id": "a774acd8-8240-11e0-9682-6814b504fd08",
+      "links": {
+        "self": "https://fmcrestapisandbox.cisco.com/api/fmc_config/v1/domain/e276abec-e0f2-11e3-8169-6d9ed49b625f/object/urlcategories/a774acd8-8240-11e0-9682-6814b504fd08"
+      },
+      "type": "URLCategory"
+    },
+    {
+      "name": "Travel",
+      "id": "a774acd8-8240-11e0-9682-6814b504fd09",
+      "links": {
+        "self": "https://fmcrestapisandbox.cisco.com/api/fmc_config/v1/domain/e276abec-e0f2-11e3-8169-6d9ed49b625f/object/urlcategories/a774acd8-8240-11e0-9682-6814b504fd09"
+      },
+      "type": "URLCategory"
+    },
+    {
+      "name": "Abused Drugs",
+      "id": "a774acd8-8240-11e0-9682-6814b504fd10",
+      "links": {
+        "self": "https://fmcrestapisandbox.cisco.com/api/fmc_config/v1/domain/e276abec-e0f2-11e3-8169-6d9ed49b625f/object/urlcategories/a774acd8-8240-11e0-9682-6814b504fd10"
+      },
+      "type": "URLCategory"
+    },
+    {
+      "name": "Adult and Pornography",
+      "id": "a774acd8-8240-11e0-9682-6814b504fd11",
+      "links": {
+        "self": "https://fmcrestapisandbox.cisco.com/api/fmc_config/v1/domain/e276abec-e0f2-11e3-8169-6d9ed49b625f/object/urlcategories/a774acd8-8240-11e0-9682-6814b504fd11"
+      },
+      "type": "URLCategory"
+    },
+    {
+      "name": "Home and Garden",
+      "id": "a774acd8-8240-11e0-9682-6814b504fd12",
+      "links": {
+        "self": "https://fmcrestapisandbox.cisco.com/api/fmc_config/v1/domain/e276abec-e0f2-11e3-8169-6d9ed49b625f/object/urlcategories/a774acd8-8240-11e0-9682-6814b504fd12"
+      },
+      "type": "URLCategory"
+    },
+    {
+      "name": "Military",
+      "id": "a774acd8-8240-11e0-9682-6814b504fd13",
+      "links": {
+        "self": "https://fmcrestapisandbox.cisco.com/api/fmc_config/v1/domain/e276abec-e0f2-11e3-8169-6d9ed49b625f/object/urlcategories/a774acd8-8240-11e0-9682-6814b504fd13"
+      },
+      "type": "URLCategory"
+    },
+    {
+      "name": "Social Network",
+      "id": "a774acd8-8240-11e0-9682-6814b504fd14",
+      "links": {
+        "self": "https://fmcrestapisandbox.cisco.com/api/fmc_config/v1/domain/e276abec-e0f2-11e3-8169-6d9ed49b625f/object/urlcategories/a774acd8-8240-11e0-9682-6814b504fd14"
+      },
+      "type": "URLCategory"
+    },
+    {
+      "name": "Dead Sites (db Ops only)",
+      "id": "a774acd8-8240-11e0-9682-6814b504fd15",
+      "links": {
+        "self": "https://fmcrestapisandbox.cisco.com/api/fmc_config/v1/domain/e276abec-e0f2-11e3-8169-6d9ed49b625f/object/urlcategories/a774acd8-8240-11e0-9682-6814b504fd15"
+      },
+      "type": "URLCategory"
+    },
+    {
+      "name": "Stock Advice and Tools",
+      "id": "a774acd8-8240-11e0-9682-6814b504fd16",
+      "links": {
+        "self": "https://fmcrestapisandbox.cisco.com/api/fmc_config/v1/domain/e276abec-e0f2-11e3-8169-6d9ed49b625f/object/urlcategories/a774acd8-8240-11e0-9682-6814b504fd16"
+      },
+      "type": "URLCategory"
+    },
+    {
+      "name": "Training and Tools",
+      "id": "a774acd8-8240-11e0-9682-6814b504fd17",
+      "links": {
+        "self": "https://fmcrestapisandbox.cisco.com/api/fmc_config/v1/domain/e276abec-e0f2-11e3-8169-6d9ed49b625f/object/urlcategories/a774acd8-8240-11e0-9682-6814b504fd17"
+      },
+      "type": "URLCategory"
+    },
+    {
+      "name": "Dating",
+      "id": "a774acd8-8240-11e0-9682-6814b504fd18",
+      "links": {
+        "self": "https://fmcrestapisandbox.cisco.com/api/fmc_config/v1/domain/e276abec-e0f2-11e3-8169-6d9ed49b625f/object/urlcategories/a774acd8-8240-11e0-9682-6814b504fd18"
+      },
+      "type": "URLCategory"
+    },
+    {
+      "name": "Sex Education",
+      "id": "a774acd8-8240-11e0-9682-6814b504fd19",
+      "links": {
+        "self": "https://fmcrestapisandbox.cisco.com/api/fmc_config/v1/domain/e276abec-e0f2-11e3-8169-6d9ed49b625f/object/urlcategories/a774acd8-8240-11e0-9682-6814b504fd19"
+      },
+      "type": "URLCategory"
+    },
+    {
+      "name": "Religion",
+      "id": "a774acd8-8240-11e0-9682-6814b504fd20",
+      "links": {
+        "self": "https://fmcrestapisandbox.cisco.com/api/fmc_config/v1/domain/e276abec-e0f2-11e3-8169-6d9ed49b625f/object/urlcategories/a774acd8-8240-11e0-9682-6814b504fd20"
+      },
+      "type": "URLCategory"
+    },
+    {
+      "name": "Entertainment and Arts",
+      "id": "a774acd8-8240-11e0-9682-6814b504fd21",
+      "links": {
+        "self": "https://fmcrestapisandbox.cisco.com/api/fmc_config/v1/domain/e276abec-e0f2-11e3-8169-6d9ed49b625f/object/urlcategories/a774acd8-8240-11e0-9682-6814b504fd21"
+      },
+      "type": "URLCategory"
+    },
+    {
+      "name": "Personal sites and Blogs",
+      "id": "a774acd8-8240-11e0-9682-6814b504fd22",
+      "links": {
+        "self": "https://fmcrestapisandbox.cisco.com/api/fmc_config/v1/domain/e276abec-e0f2-11e3-8169-6d9ed49b625f/object/urlcategories/a774acd8-8240-11e0-9682-6814b504fd22"
+      },
+      "type": "URLCategory"
+    },
+    {
+      "name": "Legal",
+      "id": "a774acd8-8240-11e0-9682-6814b504fd23",
+      "links": {
+        "self": "https://fmcrestapisandbox.cisco.com/api/fmc_config/v1/domain/e276abec-e0f2-11e3-8169-6d9ed49b625f/object/urlcategories/a774acd8-8240-11e0-9682-6814b504fd23"
+      },
+      "type": "URLCategory"
+    },
+    {
+      "name": "Local Information",
+      "id": "a774acd8-8240-11e0-9682-6814b504fd24",
+      "links": {
+        "self": "https://fmcrestapisandbox.cisco.com/api/fmc_config/v1/domain/e276abec-e0f2-11e3-8169-6d9ed49b625f/object/urlcategories/a774acd8-8240-11e0-9682-6814b504fd24"
+      },
+      "type": "URLCategory"
+    },
+    {
+      "name": "Streaming Media",
+      "id": "a774acd8-8240-11e0-9682-6814b504fd25",
+      "links": {
+        "self": "https://fmcrestapisandbox.cisco.com/api/fmc_config/v1/domain/e276abec-e0f2-11e3-8169-6d9ed49b625f/object/urlcategories/a774acd8-8240-11e0-9682-6814b504fd25"
+      },
+      "type": "URLCategory"
+    },
+    {
+      "name": "Job Search",
+      "id": "a774acd8-8240-11e0-9682-6814b504fd26",
+      "links": {
+        "self": "https://fmcrestapisandbox.cisco.com/api/fmc_config/v1/domain/e276abec-e0f2-11e3-8169-6d9ed49b625f/object/urlcategories/a774acd8-8240-11e0-9682-6814b504fd26"
+      },
+      "type": "URLCategory"
+    },
+    {
+      "name": "Gambling",
+      "id": "a774acd8-8240-11e0-9682-6814b504fd27",
+      "links": {
+        "self": "https://fmcrestapisandbox.cisco.com/api/fmc_config/v1/domain/e276abec-e0f2-11e3-8169-6d9ed49b625f/object/urlcategories/a774acd8-8240-11e0-9682-6814b504fd27"
+      },
+      "type": "URLCategory"
+    },
+    {
+      "name": "Translation",
+      "id": "a774acd8-8240-11e0-9682-6814b504fd28",
+      "links": {
+        "self": "https://fmcrestapisandbox.cisco.com/api/fmc_config/v1/domain/e276abec-e0f2-11e3-8169-6d9ed49b625f/object/urlcategories/a774acd8-8240-11e0-9682-6814b504fd28"
+      },
+      "type": "URLCategory"
+    },
+    {
+      "name": "Reference and Research",
+      "id": "a774acd8-8240-11e0-9682-6814b504fd29",
+      "links": {
+        "self": "https://fmcrestapisandbox.cisco.com/api/fmc_config/v1/domain/e276abec-e0f2-11e3-8169-6d9ed49b625f/object/urlcategories/a774acd8-8240-11e0-9682-6814b504fd29"
+      },
+      "type": "URLCategory"
+    },
+    {
+      "name": "Shareware and Freeware",
+      "id": "a774acd8-8240-11e0-9682-6814b504fd30",
+      "links": {
+        "self": "https://fmcrestapisandbox.cisco.com/api/fmc_config/v1/domain/e276abec-e0f2-11e3-8169-6d9ed49b625f/object/urlcategories/a774acd8-8240-11e0-9682-6814b504fd30"
+      },
+      "type": "URLCategory"
+    },
+    {
+      "name": "Peer to Peer",
+      "id": "a774acd8-8240-11e0-9682-6814b504fd31",
+      "links": {
+        "self": "https://fmcrestapisandbox.cisco.com/api/fmc_config/v1/domain/e276abec-e0f2-11e3-8169-6d9ed49b625f/object/urlcategories/a774acd8-8240-11e0-9682-6814b504fd31"
+      },
+      "type": "URLCategory"
+    },
+    {
+      "name": "Marijuana",
+      "id": "a774acd8-8240-11e0-9682-6814b504fd32",
+      "links": {
+        "self": "https://fmcrestapisandbox.cisco.com/api/fmc_config/v1/domain/e276abec-e0f2-11e3-8169-6d9ed49b625f/object/urlcategories/a774acd8-8240-11e0-9682-6814b504fd32"
+      },
+      "type": "URLCategory"
+    },
+    {
+      "name": "Hacking",
+      "id": "a774acd8-8240-11e0-9682-6814b504fd33",
+      "links": {
+        "self": "https://fmcrestapisandbox.cisco.com/api/fmc_config/v1/domain/e276abec-e0f2-11e3-8169-6d9ed49b625f/object/urlcategories/a774acd8-8240-11e0-9682-6814b504fd33"
+      },
+      "type": "URLCategory"
+    },
+    {
+      "name": "Games",
+      "id": "a774acd8-8240-11e0-9682-6814b504fd34",
+      "links": {
+        "self": "https://fmcrestapisandbox.cisco.com/api/fmc_config/v1/domain/e276abec-e0f2-11e3-8169-6d9ed49b625f/object/urlcategories/a774acd8-8240-11e0-9682-6814b504fd34"
+      },
+      "type": "URLCategory"
+    },
+    {
+      "name": "Philosophy and Political Advocacy",
+      "id": "a774acd8-8240-11e0-9682-6814b504fd35",
+      "links": {
+        "self": "https://fmcrestapisandbox.cisco.com/api/fmc_config/v1/domain/e276abec-e0f2-11e3-8169-6d9ed49b625f/object/urlcategories/a774acd8-8240-11e0-9682-6814b504fd35"
+      },
+      "type": "URLCategory"
+    },
+    {
+      "name": "Weapons",
+      "id": "a774acd8-8240-11e0-9682-6814b504fd36",
+      "links": {
+        "self": "https://fmcrestapisandbox.cisco.com/api/fmc_config/v1/domain/e276abec-e0f2-11e3-8169-6d9ed49b625f/object/urlcategories/a774acd8-8240-11e0-9682-6814b504fd36"
+      },
+      "type": "URLCategory"
+    },
+    {
+      "name": "Pay to Surf",
+      "id": "a774acd8-8240-11e0-9682-6814b504fd37",
+      "links": {
+        "self": "https://fmcrestapisandbox.cisco.com/api/fmc_config/v1/domain/e276abec-e0f2-11e3-8169-6d9ed49b625f/object/urlcategories/a774acd8-8240-11e0-9682-6814b504fd37"
+      },
+      "type": "URLCategory"
+    },
+    {
+      "name": "Hunting and Fishing",
+      "id": "a774acd8-8240-11e0-9682-6814b504fd38",
+      "links": {
+        "self": "https://fmcrestapisandbox.cisco.com/api/fmc_config/v1/domain/e276abec-e0f2-11e3-8169-6d9ed49b625f/object/urlcategories/a774acd8-8240-11e0-9682-6814b504fd38"
+      },
+      "type": "URLCategory"
+    },
+    {
+      "name": "Society",
+      "id": "a774acd8-8240-11e0-9682-6814b504fd39",
+      "links": {
+        "self": "https://fmcrestapisandbox.cisco.com/api/fmc_config/v1/domain/e276abec-e0f2-11e3-8169-6d9ed49b625f/object/urlcategories/a774acd8-8240-11e0-9682-6814b504fd39"
+      },
+      "type": "URLCategory"
+    },
+    {
+      "name": "Educational Institutions",
+      "id": "a774acd8-8240-11e0-9682-6814b504fd40",
+      "links": {
+        "self": "https://fmcrestapisandbox.cisco.com/api/fmc_config/v1/domain/e276abec-e0f2-11e3-8169-6d9ed49b625f/object/urlcategories/a774acd8-8240-11e0-9682-6814b504fd40"
+      },
+      "type": "URLCategory"
+    },
+    {
+      "name": "Online Greeting cards",
+      "id": "a774acd8-8240-11e0-9682-6814b504fd41",
+      "links": {
+        "self": "https://fmcrestapisandbox.cisco.com/api/fmc_config/v1/domain/e276abec-e0f2-11e3-8169-6d9ed49b625f/object/urlcategories/a774acd8-8240-11e0-9682-6814b504fd41"
+      },
+      "type": "URLCategory"
+    },
+    {
+      "name": "Sports",
+      "id": "a774acd8-8240-11e0-9682-6814b504fd42",
+      "links": {
+        "self": "https://fmcrestapisandbox.cisco.com/api/fmc_config/v1/domain/e276abec-e0f2-11e3-8169-6d9ed49b625f/object/urlcategories/a774acd8-8240-11e0-9682-6814b504fd42"
+      },
+      "type": "URLCategory"
+    },
+    {
+      "name": "Swimsuits and Intimate Apparel",
+      "id": "a774acd8-8240-11e0-9682-6814b504fd43",
+      "links": {
+        "self": "https://fmcrestapisandbox.cisco.com/api/fmc_config/v1/domain/e276abec-e0f2-11e3-8169-6d9ed49b625f/object/urlcategories/a774acd8-8240-11e0-9682-6814b504fd43"
+      },
+      "type": "URLCategory"
+    },
+    {
+      "name": "Questionable",
+      "id": "a774acd8-8240-11e0-9682-6814b504fd44",
+      "links": {
+        "self": "https://fmcrestapisandbox.cisco.com/api/fmc_config/v1/domain/e276abec-e0f2-11e3-8169-6d9ed49b625f/object/urlcategories/a774acd8-8240-11e0-9682-6814b504fd44"
+      },
+      "type": "URLCategory"
+    },
+    {
+      "name": "Kids",
+      "id": "a774acd8-8240-11e0-9682-6814b504fd45",
+      "links": {
+        "self": "https://fmcrestapisandbox.cisco.com/api/fmc_config/v1/domain/e276abec-e0f2-11e3-8169-6d9ed49b625f/object/urlcategories/a774acd8-8240-11e0-9682-6814b504fd45"
+      },
+      "type": "URLCategory"
+    },
+    {
+      "name": "Hate and Racism",
+      "id": "a774acd8-8240-11e0-9682-6814b504fd46",
+      "links": {
+        "self": "https://fmcrestapisandbox.cisco.com/api/fmc_config/v1/domain/e276abec-e0f2-11e3-8169-6d9ed49b625f/object/urlcategories/a774acd8-8240-11e0-9682-6814b504fd46"
+      },
+      "type": "URLCategory"
+    },
+    {
+      "name": "Personal Storage",
+      "id": "a774acd8-8240-11e0-9682-6814b504fd47",
+      "links": {
+        "self": "https://fmcrestapisandbox.cisco.com/api/fmc_config/v1/domain/e276abec-e0f2-11e3-8169-6d9ed49b625f/object/urlcategories/a774acd8-8240-11e0-9682-6814b504fd47"
+      },
+      "type": "URLCategory"
+    },
+    {
+      "name": "Violence",
+      "id": "a774acd8-8240-11e0-9682-6814b504fd48",
+      "links": {
+        "self": "https://fmcrestapisandbox.cisco.com/api/fmc_config/v1/domain/e276abec-e0f2-11e3-8169-6d9ed49b625f/object/urlcategories/a774acd8-8240-11e0-9682-6814b504fd48"
+      },
+      "type": "URLCategory"
+    },
+    {
+      "name": "Keyloggers and Monitoring",
+      "id": "a774acd8-8240-11e0-9682-6814b504fd49",
+      "links": {
+        "self": "https://fmcrestapisandbox.cisco.com/api/fmc_config/v1/domain/e276abec-e0f2-11e3-8169-6d9ed49b625f/object/urlcategories/a774acd8-8240-11e0-9682-6814b504fd49"
+      },
+      "type": "URLCategory"
+    },
+    {
+      "name": "Search Engines",
+      "id": "a774acd8-8240-11e0-9682-6814b504fd50",
+      "links": {
+        "self": "https://fmcrestapisandbox.cisco.com/api/fmc_config/v1/domain/e276abec-e0f2-11e3-8169-6d9ed49b625f/object/urlcategories/a774acd8-8240-11e0-9682-6814b504fd50"
+      },
+      "type": "URLCategory"
+    },
+    {
+      "name": "Internet Portals",
+      "id": "a774acd8-8240-11e0-9682-6814b504fd51",
+      "links": {
+        "self": "https://fmcrestapisandbox.cisco.com/api/fmc_config/v1/domain/e276abec-e0f2-11e3-8169-6d9ed49b625f/object/urlcategories/a774acd8-8240-11e0-9682-6814b504fd51"
+      },
+      "type": "URLCategory"
+    },
+    {
+      "name": "Web Advertisements",
+      "id": "a774acd8-8240-11e0-9682-6814b504fd52",
+      "links": {
+        "self": "https://fmcrestapisandbox.cisco.com/api/fmc_config/v1/domain/e276abec-e0f2-11e3-8169-6d9ed49b625f/object/urlcategories/a774acd8-8240-11e0-9682-6814b504fd52"
+      },
+      "type": "URLCategory"
+    },
+    {
+      "name": "Cheating",
+      "id": "a774acd8-8240-11e0-9682-6814b504fd53",
+      "links": {
+        "self": "https://fmcrestapisandbox.cisco.com/api/fmc_config/v1/domain/e276abec-e0f2-11e3-8169-6d9ed49b625f/object/urlcategories/a774acd8-8240-11e0-9682-6814b504fd53"
+      },
+      "type": "URLCategory"
+    },
+    {
+      "name": "Gross",
+      "id": "a774acd8-8240-11e0-9682-6814b504fd54",
+      "links": {
+        "self": "https://fmcrestapisandbox.cisco.com/api/fmc_config/v1/domain/e276abec-e0f2-11e3-8169-6d9ed49b625f/object/urlcategories/a774acd8-8240-11e0-9682-6814b504fd54"
+      },
+      "type": "URLCategory"
+    },
+    {
+      "name": "Web based email",
+      "id": "a774acd8-8240-11e0-9682-6814b504fd55",
+      "links": {
+        "self": "https://fmcrestapisandbox.cisco.com/api/fmc_config/v1/domain/e276abec-e0f2-11e3-8169-6d9ed49b625f/object/urlcategories/a774acd8-8240-11e0-9682-6814b504fd55"
+      },
+      "type": "URLCategory"
+    },
+    {
+      "name": "Malware Sites",
+      "id": "a774acd8-8240-11e0-9682-6814b504fd56",
+      "links": {
+        "self": "https://fmcrestapisandbox.cisco.com/api/fmc_config/v1/domain/e276abec-e0f2-11e3-8169-6d9ed49b625f/object/urlcategories/a774acd8-8240-11e0-9682-6814b504fd56"
+      },
+      "type": "URLCategory"
+    },
+    {
+      "name": "Phishing and Other Frauds",
+      "id": "a774acd8-8240-11e0-9682-6814b504fd57",
+      "links": {
+        "self": "https://fmcrestapisandbox.cisco.com/api/fmc_config/v1/domain/e276abec-e0f2-11e3-8169-6d9ed49b625f/object/urlcategories/a774acd8-8240-11e0-9682-6814b504fd57"
+      },
+      "type": "URLCategory"
+    },
+    {
+      "name": "Proxy Avoid and Anonymizers",
+      "id": "a774acd8-8240-11e0-9682-6814b504fd58",
+      "links": {
+        "self": "https://fmcrestapisandbox.cisco.com/api/fmc_config/v1/domain/e276abec-e0f2-11e3-8169-6d9ed49b625f/object/urlcategories/a774acd8-8240-11e0-9682-6814b504fd58"
+      },
+      "type": "URLCategory"
+    },
+    {
+      "name": "Spyware and Adware",
+      "id": "a774acd8-8240-11e0-9682-6814b504fd59",
+      "links": {
+        "self": "https://fmcrestapisandbox.cisco.com/api/fmc_config/v1/domain/e276abec-e0f2-11e3-8169-6d9ed49b625f/object/urlcategories/a774acd8-8240-11e0-9682-6814b504fd59"
+      },
+      "type": "URLCategory"
+    },
+    {
+      "name": "Music",
+      "id": "a774acd8-8240-11e0-9682-6814b504fd60",
+      "links": {
+        "self": "https://fmcrestapisandbox.cisco.com/api/fmc_config/v1/domain/e276abec-e0f2-11e3-8169-6d9ed49b625f/object/urlcategories/a774acd8-8240-11e0-9682-6814b504fd60"
+      },
+      "type": "URLCategory"
+    },
+    {
+      "name": "Government",
+      "id": "a774acd8-8240-11e0-9682-6814b504fd61",
+      "links": {
+        "self": "https://fmcrestapisandbox.cisco.com/api/fmc_config/v1/domain/e276abec-e0f2-11e3-8169-6d9ed49b625f/object/urlcategories/a774acd8-8240-11e0-9682-6814b504fd61"
+      },
+      "type": "URLCategory"
+    },
+    {
+      "name": "Nudity",
+      "id": "a774acd8-8240-11e0-9682-6814b504fd62",
+      "links": {
+        "self": "https://fmcrestapisandbox.cisco.com/api/fmc_config/v1/domain/e276abec-e0f2-11e3-8169-6d9ed49b625f/object/urlcategories/a774acd8-8240-11e0-9682-6814b504fd62"
+      },
+      "type": "URLCategory"
+    },
+    {
+      "name": "News and Media",
+      "id": "a774acd8-8240-11e0-9682-6814b504fd63",
+      "links": {
+        "self": "https://fmcrestapisandbox.cisco.com/api/fmc_config/v1/domain/e276abec-e0f2-11e3-8169-6d9ed49b625f/object/urlcategories/a774acd8-8240-11e0-9682-6814b504fd63"
+      },
+      "type": "URLCategory"
+    },
+    {
+      "name": "Illegal",
+      "id": "a774acd8-8240-11e0-9682-6814b504fd64",
+      "links": {
+        "self": "https://fmcrestapisandbox.cisco.com/api/fmc_config/v1/domain/e276abec-e0f2-11e3-8169-6d9ed49b625f/object/urlcategories/a774acd8-8240-11e0-9682-6814b504fd64"
+      },
+      "type": "URLCategory"
+    },
+    {
+      "name": "CDNs",
+      "id": "a774acd8-8240-11e0-9682-6814b504fd65",
+      "links": {
+        "self": "https://fmcrestapisandbox.cisco.com/api/fmc_config/v1/domain/e276abec-e0f2-11e3-8169-6d9ed49b625f/object/urlcategories/a774acd8-8240-11e0-9682-6814b504fd65"
+      },
+      "type": "URLCategory"
+    },
+    {
+      "name": "Internet Communications",
+      "id": "a774acd8-8240-11e0-9682-6814b504fd66",
+      "links": {
+        "self": "https://fmcrestapisandbox.cisco.com/api/fmc_config/v1/domain/e276abec-e0f2-11e3-8169-6d9ed49b625f/object/urlcategories/a774acd8-8240-11e0-9682-6814b504fd66"
+      },
+      "type": "URLCategory"
+    },
+    {
+      "name": "Bot Nets",
+      "id": "a774acd8-8240-11e0-9682-6814b504fd67",
+      "links": {
+        "self": "https://fmcrestapisandbox.cisco.com/api/fmc_config/v1/domain/e276abec-e0f2-11e3-8169-6d9ed49b625f/object/urlcategories/a774acd8-8240-11e0-9682-6814b504fd67"
+      },
+      "type": "URLCategory"
+    },
+    {
+      "name": "Abortion",
+      "id": "a774acd8-8240-11e0-9682-6814b504fd68",
+      "links": {
+        "self": "https://fmcrestapisandbox.cisco.com/api/fmc_config/v1/domain/e276abec-e0f2-11e3-8169-6d9ed49b625f/object/urlcategories/a774acd8-8240-11e0-9682-6814b504fd68"
+      },
+      "type": "URLCategory"
+    },
+    {
+      "name": "Health and Medicine",
+      "id": "a774acd8-8240-11e0-9682-6814b504fd69",
+      "links": {
+        "self": "https://fmcrestapisandbox.cisco.com/api/fmc_config/v1/domain/e276abec-e0f2-11e3-8169-6d9ed49b625f/object/urlcategories/a774acd8-8240-11e0-9682-6814b504fd69"
+      },
+      "type": "URLCategory"
+    },
+    {
+      "name": "Confirmed SPAM Sources",
+      "id": "a774acd8-8240-11e0-9682-6814b504fd70",
+      "links": {
+        "self": "https://fmcrestapisandbox.cisco.com/api/fmc_config/v1/domain/e276abec-e0f2-11e3-8169-6d9ed49b625f/object/urlcategories/a774acd8-8240-11e0-9682-6814b504fd70"
+      },
+      "type": "URLCategory"
+    },
+    {
+      "name": "SPAM URLs",
+      "id": "a774acd8-8240-11e0-9682-6814b504fd71",
+      "links": {
+        "self": "https://fmcrestapisandbox.cisco.com/api/fmc_config/v1/domain/e276abec-e0f2-11e3-8169-6d9ed49b625f/object/urlcategories/a774acd8-8240-11e0-9682-6814b504fd71"
+      },
+      "type": "URLCategory"
+    },
+    {
+      "name": "Unconfirmed SPAM Sources",
+      "id": "a774acd8-8240-11e0-9682-6814b504fd72",
+      "links": {
+        "self": "https://fmcrestapisandbox.cisco.com/api/fmc_config/v1/domain/e276abec-e0f2-11e3-8169-6d9ed49b625f/object/urlcategories/a774acd8-8240-11e0-9682-6814b504fd72"
+      },
+      "type": "URLCategory"
+    },
+    {
+      "name": "Open HTTP Proxies",
+      "id": "a774acd8-8240-11e0-9682-6814b504fd73",
+      "links": {
+        "self": "https://fmcrestapisandbox.cisco.com/api/fmc_config/v1/domain/e276abec-e0f2-11e3-8169-6d9ed49b625f/object/urlcategories/a774acd8-8240-11e0-9682-6814b504fd73"
+      },
+      "type": "URLCategory"
+    },
+    {
+      "name": "Dynamic Comment",
+      "id": "a774acd8-8240-11e0-9682-6814b504fd74",
+      "links": {
+        "self": "https://fmcrestapisandbox.cisco.com/api/fmc_config/v1/domain/e276abec-e0f2-11e3-8169-6d9ed49b625f/object/urlcategories/a774acd8-8240-11e0-9682-6814b504fd74"
+      },
+      "type": "URLCategory"
+    },
+    {
+      "name": "Parked Domains",
+      "id": "a774acd8-8240-11e0-9682-6814b504fd75",
+      "links": {
+        "self": "https://fmcrestapisandbox.cisco.com/api/fmc_config/v1/domain/e276abec-e0f2-11e3-8169-6d9ed49b625f/object/urlcategories/a774acd8-8240-11e0-9682-6814b504fd75"
+      },
+      "type": "URLCategory"
+    },
+    {
+      "name": "Alcohol and Tobacco",
+      "id": "a774acd8-8240-11e0-9682-6814b504fd76",
+      "links": {
+        "self": "https://fmcrestapisandbox.cisco.com/api/fmc_config/v1/domain/e276abec-e0f2-11e3-8169-6d9ed49b625f/object/urlcategories/a774acd8-8240-11e0-9682-6814b504fd76"
+      },
+      "type": "URLCategory"
+    },
+    {
+      "name": "Private IP Addresses",
+      "id": "a774acd8-8240-11e0-9682-6814b504fd77",
+      "links": {
+        "self": "https://fmcrestapisandbox.cisco.com/api/fmc_config/v1/domain/e276abec-e0f2-11e3-8169-6d9ed49b625f/object/urlcategories/a774acd8-8240-11e0-9682-6814b504fd77"
+      },
+      "type": "URLCategory"
+    },
+    {
+      "name": "Image and Video Search",
+      "id": "a774acd8-8240-11e0-9682-6814b504fd78",
+      "links": {
+        "self": "https://fmcrestapisandbox.cisco.com/api/fmc_config/v1/domain/e276abec-e0f2-11e3-8169-6d9ed49b625f/object/urlcategories/a774acd8-8240-11e0-9682-6814b504fd78"
+      },
+      "type": "URLCategory"
+    },
+    {
+      "name": "Fashion and Beauty",
+      "id": "a774acd8-8240-11e0-9682-6814b504fd79",
+      "links": {
+        "self": "https://fmcrestapisandbox.cisco.com/api/fmc_config/v1/domain/e276abec-e0f2-11e3-8169-6d9ed49b625f/object/urlcategories/a774acd8-8240-11e0-9682-6814b504fd79"
+      },
+      "type": "URLCategory"
+    },
+    {
+      "name": "Recreation and Hobbies",
+      "id": "a774acd8-8240-11e0-9682-6814b504fd80",
+      "links": {
+        "self": "https://fmcrestapisandbox.cisco.com/api/fmc_config/v1/domain/e276abec-e0f2-11e3-8169-6d9ed49b625f/object/urlcategories/a774acd8-8240-11e0-9682-6814b504fd80"
+      },
+      "type": "URLCategory"
+    },
+    {
+      "name": "Motor Vehicles",
+      "id": "a774acd8-8240-11e0-9682-6814b504fd81",
+      "links": {
+        "self": "https://fmcrestapisandbox.cisco.com/api/fmc_config/v1/domain/e276abec-e0f2-11e3-8169-6d9ed49b625f/object/urlcategories/a774acd8-8240-11e0-9682-6814b504fd81"
+      },
+      "type": "URLCategory"
+    },
+    {
+      "name": "Web Hosting Sites",
+      "id": "a774acd8-8240-11e0-9682-6814b504fd82",
+      "links": {
+        "self": "https://fmcrestapisandbox.cisco.com/api/fmc_config/v1/domain/e276abec-e0f2-11e3-8169-6d9ed49b625f/object/urlcategories/a774acd8-8240-11e0-9682-6814b504fd82"
+      },
+      "type": "URLCategory"
+    },
+    {
+      "name": "Food and Dining",
+      "id": "a774acd8-8240-11e0-9682-6814b504fd83",
+      "links": {
+        "self": "https://fmcrestapisandbox.cisco.com/api/fmc_config/v1/domain/e276abec-e0f2-11e3-8169-6d9ed49b625f/object/urlcategories/a774acd8-8240-11e0-9682-6814b504fd83"
+      },
+      "type": "URLCategory"
+    },
+    {
+      "name": "Uncategorized",
+      "id": "89a91712-fe55-11e4-a157-a9da511cbd1e",
+      "links": {
+        "self": "https://fmcrestapisandbox.cisco.com/api/fmc_config/v1/domain/e276abec-e0f2-11e3-8169-6d9ed49b625f/object/urlcategories/89a91712-fe55-11e4-a157-a9da511cbd1e"
+      },
+      "type": "URLCategory"
+    }
+  ],
+  "paging": {
+    "offset": 0,
+    "limit": 84,
+    "count": 84,
+    "pages": 1
+  }
+}

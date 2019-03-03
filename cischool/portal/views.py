@@ -9,7 +9,8 @@ from django.contrib.auth import logout
 # Create your views here.
 
 def land(request):
-	pass
+	context = {'hello': 'world'}
+	return render(request, 'portal/landing.html', context)
 
 
 def register(request):
