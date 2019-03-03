@@ -110,7 +110,8 @@
 },
 {
     "model": "portal.url",
-    "pk": "005056BB-0B24-0ed3-0000-858993527847",
+    "identity": "005056BB-0B24-0ed3-0000-858993527847",
+    "pk": "120",
     "fields": {
         "url": "http://facebook.com",
         "name": "Facebook",
@@ -119,7 +120,8 @@
 },
 {
     "model": "portal.url",
-    "pk": "005056BB-0B24-0ed3-0000-858993527850",
+    "pk": "121",
+    "identity": "005056BB-0B24-0ed3-0000-858993527850",
     "fields": {
         "url": "http://icici.com",
         "name": "ICICI Bank",
@@ -128,7 +130,8 @@
 },
 {
     "model": "portal.url",
-    "pk": "005056BB-0B24-0ed3-0000-858993527853",
+    "pk": "122",
+    "identity": "005056BB-0B24-0ed3-0000-858993527853",
     "fields": {
         "url": "http://researchgate.com",
         "name": "Research Gate",
@@ -137,7 +140,8 @@
 },
 {
     "model": "portal.urlcategories",
-    "pk": "005056BB-0B24-0ed3-0000-858993527848",
+    "pk": "125",
+    "identity": "005056BB-0B24-0ed3-0000-858993527848",
     "fields": {
         "name": "Social Media",
         "reputation": "BENIGN",
@@ -146,7 +150,8 @@
 },
 {
     "model": "portal.urlcategories",
-    "pk": "005056BB-0B24-0ed3-0000-858993527851",
+    "pk": "126",
+    "identity": "005056BB-0B24-0ed3-0000-858993527851",
     "fields": {
         "name": "Banking",
         "reputation": "BENIGN",
@@ -155,7 +160,8 @@
 },
 {
     "model": "portal.urlcategories",
-    "pk": "005056BB-0B24-0ed3-0000-858993527854",
+    "pk": "127",
+    "identity": "005056BB-0B24-0ed3-0000-858993527854",
     "fields": {
         "name": "Academia",
         "reputation": "BENIGN",
@@ -170,10 +176,10 @@
         "enabled": true,
         "action": "BLOCK",
         "urls": [
-            "005056BB-0B24-0ed3-0000-858993527847"
+            "121"
         ],
         "url_categories": [
-            "005056BB-0B24-0ed3-0000-858993527848"
+            "125"
         ]
     }
 },
@@ -185,10 +191,10 @@
         "enabled": true,
         "action": "ALLOW",
         "urls": [
-            "005056BB-0B24-0ed3-0000-858993527850"
+            "122"
         ],
         "url_categories": [
-            "005056BB-0B24-0ed3-0000-858993527851"
+            "126"
         ]
     }
 },
@@ -200,16 +206,16 @@
         "enabled": true,
         "action": "ALLOW",
         "urls": [
-            "005056BB-0B24-0ed3-0000-858993527853"
+            "120"
         ],
         "url_categories": [
-            "005056BB-0B24-0ed3-0000-858993527854"
+            "127"
         ]
     }
 },
 {
     "model": "portal.policy",
-    "pk": "005056BB-0B24-0ed3-0000-858993527846",
+    "pk": "130",
     "fields": {
         "name": "Social Media",
         "desc": "Bans all social media websites",
@@ -221,7 +227,7 @@
 },
 {
     "model": "portal.policy",
-    "pk": "005056BB-0B24-0ed3-0000-858993527849",
+    "pk": "131",
     "fields": {
         "name": "Banking Whitelist",
         "desc": "Allow only banking websites",
@@ -233,7 +239,7 @@
 },
 {
     "model": "portal.policy",
-    "pk": "005056BB-0B24-0ed3-0000-858993527852",
+    "pk": "132",
     "fields": {
         "name": "Academic Whitelist",
         "desc": "Allow only academic websites",
@@ -251,7 +257,7 @@
         "code": "CS 101",
         "lecture": 2,
         "instructor": 3,
-        "policy": "005056BB-0B24-0ed3-0000-858993527846",
+        "policy": "130",
         "students": [
             "codemaxx",
             "nihal111",
@@ -267,7 +273,7 @@
         "code": "CS 224",
         "lecture": 3,
         "instructor": 3,
-        "policy": "005056BB-0B24-0ed3-0000-858993527849",
+        "policy": "131",
         "students": [
             "codemaxx",
             "darshan10k",
@@ -283,7 +289,7 @@
         "code": "EE 777",
         "lecture": 4,
         "instructor": 3,
-        "policy": "005056BB-0B24-0ed3-0000-858993527852",
+        "policy": "132",
         "students": [
             "codemaxx",
             "nihal111",
