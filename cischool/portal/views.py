@@ -4,7 +4,7 @@ from django.shortcuts import render, redirect
 from django.urls import reverse
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate
-from portal.models import Instructor, Policy, UrlCategories, Url
+from portal.models import Instructor, Policy, UrlCategories, Url, Course
 from django.contrib.auth import logout, login
 from django.views.decorators.csrf import csrf_exempt
 import json
@@ -25,14 +25,14 @@ def land(request):
 			# current_lecture, next_lecture ()
 			last_updated = datetime.datetime.now()
 			day = datetime.datetime.today().weekday()
-			time_now = request_time.hour
+			time_now = last_updated.hour
 			later_courses = Course.objects.filter(lecture__slot__day=day, lecture__slot__start__gt=time_now).order_by('lecture__slot__start')
 			cur_course = Course.objects.filter(lecture__slot__start=time_now, lecture__slot__day=day)[0]
 			next_course = later_courses[0]
 			upcoming_course = later_courses[1]
 			context = {'current_course': cur_course, 'next_course': next_course, 'upcoming_course': upcoming_course, 'last_updated': last_updated}
 			return redirect(reverse('portal:dashboard'), context=context)
-	return redirect(reverse('portal:landing'))
+	return render(request, 'portal/landing.html')
 
 @csrf_exempt
 def register(request):
@@ -191,7 +191,6 @@ def create_url(request):
 		finally:
 		    if r:
 		        r.close()
-
 		return redirect(reverse("portal:success"))
 
 
@@ -200,7 +199,6 @@ def create_rule(request):
 		policies = Policy.objects.all()
 		categories = UrlCategories.objects.all()
 		urls = Url.objects.all()
-
 		return render(request, 'portal/create_rule.html', context={'policies': policies,'categories': categories,'urls': urls})
 
 	if request.method == 'POST':
@@ -213,7 +211,8 @@ def create_rule(request):
 		    url = url[:-1]
 
 		urls = []
-		for url in request.POST["urls"]:
+		for custom_url_id in request.POST["custom_urls"]:
+			url = Url.objects.get(small_id=custom_url_id)
 			ob = {
 				"name": url["name"],
 				"type": "Url",
@@ -222,15 +221,16 @@ def create_rule(request):
 			urls.append(ob)
 
 		urlcategories = []
-		for urlcategory in request.POST["urlcategories"]:
+		for custom_category_id in request.POST["custom_categories"]:
+			category = UrlCategories.objects.get(small_id=custom_category_id)
 			ob = {
 				"type": "UrlCategoryAndReputation",
 				"category": {
-					"name": urlcategory["name"],
-					"id": urlcategory["id"],
+					"name": category["name"],
+					"id": category["id"],
 					"type": "URLCategory"
 				},
-				"reputation": urlcategory["reputation"]
+				"reputation": category["reputation"]
 			}
 			urlcategories.append(ob)
 
@@ -267,6 +267,7 @@ def create_rule(request):
 		finally:
 		    if r:
 		        r.close()
+		return redirect(reverse("portal:success"))
 
 
 @login_required
@@ -322,6 +323,7 @@ def create_policy(request):
 		    if status_code == 201 or status_code == 202:
 		        print ("Post was successful...")
 		        json_resp = json.loads(resp)
+
 		    else:
 		        r.raise_for_status()
 		        print ("Error occurred in POST --> " + resp)
