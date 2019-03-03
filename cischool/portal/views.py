@@ -37,6 +37,7 @@ def register(request):
 		user.save()
 		Instructor(user=user).save()
 		authenticate(request, username=username, password=password)
+		login(request, user)
 		return redirect(reverse('portal:dashboard'))
 
 @csrf_exempt
@@ -57,12 +58,7 @@ def login_view(request):
 @login_required
 def logout_view(request):
 	logout(request)
-
-
-def register(request):
-	context = {'hello': 'world'}
-	return render(request, 'portal/register.html', context)
-
+	return redirect(reverse('portal:landing'))
 
 @login_required
 def dashboard(request):
