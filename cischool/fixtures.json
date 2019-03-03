@@ -57,51 +57,6 @@
     }
 },
 {
-    "model": "portal.instructor",
-    "pk": 4,
-    "fields": {
-        "user": [
-            "sajalnarang"
-        ]
-    }
-},
-{
-    "model": "portal.instructor",
-    "pk": 5,
-    "fields": {
-        "user": [
-            "sajalnarang"
-        ]
-    }
-},
-{
-    "model": "portal.instructor",
-    "pk": 6,
-    "fields": {
-        "user": [
-            "sajalnarang"
-        ]
-    }
-},
-{
-    "model": "portal.instructor",
-    "pk": 7,
-    "fields": {
-        "user": [
-            "sajalnarang"
-        ]
-    }
-},
-{
-    "model": "portal.instructor",
-    "pk": 8,
-    "fields": {
-        "user": [
-            "sajalnarang"
-        ]
-    }
-},
-{
     "model": "portal.student",
     "pk": "codemaxx",
     "fields": {
@@ -311,7 +266,7 @@
         "name": "Computer Networks",
         "code": "CS 224",
         "lecture": 3,
-        "instructor": 5,
+        "instructor": 3,
         "policy": "005056BB-0B24-0ed3-0000-858993527849",
         "students": [
             "codemaxx",
@@ -327,7 +282,7 @@
         "name": "Network Security",
         "code": "EE 777",
         "lecture": 4,
-        "instructor": 7,
+        "instructor": 3,
         "policy": "005056BB-0B24-0ed3-0000-858993527852",
         "students": [
             "codemaxx",

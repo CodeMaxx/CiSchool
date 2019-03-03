@@ -34,6 +34,7 @@ def land(request):
 			return redirect(reverse('portal:dashboard'), context=context)
 	return redirect(reverse('portal:login'))
 
+
 @csrf_exempt
 def register(request):
 	if request.method == 'GET':
@@ -191,7 +192,6 @@ def create_url(request):
 		finally:
 		    if r:
 		        r.close()
-
 		return redirect(reverse("portal:success"))
 
 
@@ -200,7 +200,6 @@ def create_rule(request):
 		policies = Policy.objects.all()
 		categories = UrlCategories.objects.all()
 		urls = Url.objects.all()
-
 		return render(request, 'portal/create_rule.html', context={'policies': policies,'categories': categories,'urls': urls})
 
 	if request.method == 'POST':
@@ -213,7 +212,8 @@ def create_rule(request):
 		    url = url[:-1]
 
 		urls = []
-		for url in request.POST["urls"]:
+		for custom_url_id in request.POST["custom_urls"]:
+			url = Url.objects.get(small_id=custom_url_id)
 			ob = {
 				"name": url["name"],
 				"type": "Url",
@@ -222,15 +222,16 @@ def create_rule(request):
 			urls.append(ob)
 
 		urlcategories = []
-		for urlcategory in request.POST["urlcategories"]:
+		for custom_category_id in request.POST["custom_categories"]:
+			category = UrlCategories.objects.get(small_id=custom_category_id)
 			ob = {
 				"type": "UrlCategoryAndReputation",
 				"category": {
-					"name": urlcategory["name"],
-					"id": urlcategory["id"],
+					"name": category["name"],
+					"id": category["id"],
 					"type": "URLCategory"
 				},
-				"reputation": urlcategory["reputation"]
+				"reputation": category["reputation"]
 			}
 			urlcategories.append(ob)
 
@@ -267,6 +268,7 @@ def create_rule(request):
 		finally:
 		    if r:
 		        r.close()
+		return redirect(reverse("portal:success"))
 
 
 @login_required
@@ -322,6 +324,7 @@ def create_policy(request):
 		    if status_code == 201 or status_code == 202:
 		        print ("Post was successful...")
 		        json_resp = json.loads(resp)
+
 		    else:
 		        r.raise_for_status()
 		        print ("Error occurred in POST --> " + resp)
