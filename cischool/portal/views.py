@@ -83,20 +83,6 @@ def policy_toolbox(request):
 	context = {'hello': 'world'}
 	return render(request, 'portal/ptoolbox.html', context)
 
-@login_required
-def policy_edit(request):
-	context = {'hello': 'world'}
-	return render(request, 'portal/policyedit.html', context)
-
-@login_required
-def filter_edit(request):
-	context = {'hello': 'world'}
-	return render(request, 'portal/filteredit.html', context)
-
-@login_required
-def category_edit(request):
-	context = {'hello': 'world'}
-	return render(request, 'portal/categoryedit.html', context)
 
 def get_auth_token(server):
 	username = "nihal.111"
@@ -130,7 +116,7 @@ def get_auth_token(server):
 
 def categories(request):
 	all_entries = UrlCategories.objects.all()
-	return render(request, 'categories.html', context={'categories': all_entries})
+	return render(request, 'portal/categories.html', context={'categories': all_entries})
 
 
 def policies(request):
