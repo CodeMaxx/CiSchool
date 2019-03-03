@@ -4,14 +4,9 @@ from django.shortcuts import render, redirect
 from django.urls import reverse
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate
-<<<<<<< HEAD
 from portal.models import Instructor, Policy, UrlCategories
-from django.contrib.auth import logout
-=======
-from portal.models import Instructor, Policy
 from django.contrib.auth import logout, login
 from django.views.decorators.csrf import csrf_exempt
->>>>>>> 899f2d96a98f4b9b0a2a1a1c852565756ed92686
 import json
 import sys
 import requests
@@ -62,7 +57,6 @@ def login_view(request):
 @login_required
 def logout_view(request):
 	logout(request)
-<<<<<<< HEAD
 
 
 def register(request):
