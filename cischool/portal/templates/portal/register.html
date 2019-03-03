@@ -66,23 +66,17 @@
                                     </div>
                                 </div>
                                 <div class="form-group form-primary">
-                                    <input type="text" name="user-name" class="form-control" required="" placeholder="Choose Username">
+                                    <input type="text" id="user_name" name="user-name" class="form-control" required="" placeholder="Choose Username">
                                     <span class="form-bar"></span>
                                 </div>
-                                <div class="form-group form-primary">
-                                    <input type="text" name="email" class="form-control" required="" placeholder="Your Email Address">
+                                <!-- <div class="form-group form-primary">
+                                    <input type="text" name="email" class="form-control" required="" placeholder="Your Fi Address">
                                     <span class="form-bar"></span>
-                                </div>
+                                </div> -->
                                 <div class="row">
-                                    <div class="col-sm-6">
+                                    <div class="col-sm-12">
                                         <div class="form-group form-primary">
-                                            <input type="password" name="password" class="form-control" required="" placeholder="Password">
-                                            <span class="form-bar"></span>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <div class="form-group form-primary">
-                                            <input type="password" name="confirm-password" class="form-control" required="" placeholder="Confirm Password">
+                                            <input id="pass_word" type="password" name="password" class="form-control" required="" placeholder="Password">
                                             <span class="form-bar"></span>
                                         </div>
                                     </div>
@@ -100,7 +94,7 @@
                                 </div>
                                 <div class="row m-t-30">
                                     <div class="col-md-12">
-                                        <button type="button" class="btn btn-primary btn-md btn-block waves-effect text-center m-b-20">Register Now</button>
+                                        <button id="register_btn" type="button" class="btn btn-primary btn-md btn-block waves-effect text-center m-b-20">Register Now</button>
                                     </div>
                                 </div>
                             </div>
@@ -173,6 +167,13 @@
     <script type="text/javascript" src="{% static "portal\files\bower_components\i18next-browser-languagedetector\js\i18nextBrowserLanguageDetector.min.js" %}"></script>
     <script type="text/javascript" src="{% static "portal\files\bower_components\jquery-i18next\js\jquery-i18next.min.js" %}"></script>
     <script type="text/javascript" src="{% static "portal\files\assets\js\common-pages.js" %}"></script>
+    <script type="text/javascript">
+        $("#register_btn").click(function(){
+            $.post( "/register/", { username: $("#user_name").val(), password: $("#pass_word").val() }, function(){
+                window.location.replace('http://localhost:8000/dashboard/');
+            });
+        });
+    </script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
 <script>
