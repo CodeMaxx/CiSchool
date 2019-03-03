@@ -49,8 +49,9 @@ def login(request):
 
 
 @login_required
-def logout(request):
+def logout_view(request):
 	logout(request)
+	return redirect('portal:landing')
 
 @login_required
 def dashboard(request):
