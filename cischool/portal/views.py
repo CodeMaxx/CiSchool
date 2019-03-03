@@ -26,10 +26,11 @@ def land(request):
 			last_updated = datetime.datetime.now()
 			day = datetime.datetime.today().weekday()
 			time_now = request_time.hour
-			instr_courses = Course.objects.filter(lecture__slot__day=day, lecture__slot__start__gt=time_now).order_by('lecture__slot__start')[0]
+			later_courses = Course.objects.filter(lecture__slot__day=day, lecture__slot__start__gt=time_now).order_by('lecture__slot__start')
 			cur_course = Course.objects.filter(lecture__slot__start=time_now, lecture__slot__day=day)[0]
-
-			context = {'current_course': cur_course, 'next_course': next_course, 'last_updated': last_updated}
+			next_course = later_courses[0]
+			upcoming_course = later_courses[1]
+			context = {'current_course': cur_course, 'next_course': next_course, 'upcoming_course': upcoming_course, 'last_updated': last_updated}
 			return redirect(reverse('portal:dashboard'), context=context)
 	return redirect(reverse('portal:landing'))
 
