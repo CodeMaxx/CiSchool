@@ -19,6 +19,9 @@ def register(request):
 	context = {'hello': 'world'}
 	return render(request, 'portal/register.html', context)
 
+def dashboard(request):
+	context = {'hello': 'world'}
+	return render(request, 'portal/dashboard.html', context)
 
 def courses(request):
 	pass
