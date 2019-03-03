@@ -32,7 +32,7 @@ def land(request):
 			upcoming_course = later_courses[1]
 			context = {'current_course': cur_course, 'next_course': next_course, 'upcoming_course': upcoming_course, 'last_updated': last_updated}
 			return redirect(reverse('portal:dashboard'), context=context)
-	return redirect(reverse('portal:landing'))
+	return redirect(reverse('portal:login'))
 
 @csrf_exempt
 def register(request):
