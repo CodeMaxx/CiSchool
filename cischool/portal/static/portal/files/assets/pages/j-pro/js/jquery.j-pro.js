@@ -421,13 +421,13 @@ JustFormsPro.prototype = {
 		// Debug result
 		if ( config.debugArr.length ) {
 			if ( !config.debug ){
-				alert( config.dict.debugError );
+				// alert( config.dict.debugError );
 				$form.on( "submit", false );
 				return false;
 			}
 			str = config.debugArr.join( '\n -------------- \n' );
 			console.warn( str );
-			alert( str );
+			// alert( str );
 			config.debugArr = [];
 			$form.on( "submit", false );
 			return false;

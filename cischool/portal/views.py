@@ -93,6 +93,11 @@ def filter_edit(request):
 	context = {'hello': 'world'}
 	return render(request, 'portal/filteredit.html', context)
 
+@login_required
+def category_edit(request):
+	context = {'hello': 'world'}
+	return render(request, 'portal/categoryedit.html', context)
+
 def get_auth_token(server):
 	username = "nihal.111"
 	password = "Tx6RWzAQ"

@@ -26,9 +26,42 @@
     <!-- custom js -->
 
     <script src="{% static "portal\files\assets\js\vartical-layout.min.js" %}"></script>
-    <script src={% static "portal\files\assets\js\jquery.mCustomScrollbar.concat.min.js" %}"></script>
-    <script type="text/javascript" src="{% static "portal\files\assets\pages\dashboard\custom-dashboard.js" %}"></script>
+    <script src="{% static "portal\files\assets\js\jquery.mCustomScrollbar.concat.min.js" %}"></script>
+    <!-- <script type="text/javascript" src="{% static "portal\files\assets\pages\dashboard\custom-dashboard.js" %}"></script> -->
     <script type="text/javascript" src="{% static "portal\files\assets\js\script.min.js" %}"></script>
+    <script type="text/javascript">
+        function startTime() {
+          var today = new Date();
+          var m = today.getMinutes();
+          var s = today.getSeconds();
+          m = checkTime(m);
+          s = checkTime(s);
+          if(document.getElementById('startTime'))
+            document.getElementById('startTime').innerHTML = "00" + ":" + m + ":" + s;
+          if(document.getElementById('endTime'))
+            document.getElementById('endTime').innerHTML = "00" + ":" + (59 - m) + ":" + (60 - s);
+          var t = setTimeout(startTime, 500);
+        }
+        function checkTime(i) {
+          if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+          return i;
+        }
+
+        function randomBandwidth() {
+            var u = 0, v = 0;
+            while(u === 0) u = Math.random(); //Converting [0,1) to (0,1)
+            while(v === 0) v = Math.random();
+            var n = Math.sqrt( -2.0 * Math.log( u ) ) * Math.cos( 2.0 * Math.PI * v );
+            if(document.getElementById('Bandwidth'))
+              document.getElementById('Bandwidth').innerHTML = Math.round((n * 2 + 9) * 100) / 100 + " MB/s";
+            var t = setTimeout(randomBandwidth, 2000)
+        }
+
+        function start() {
+            startTime();
+            randomBandwidth();
+        }
+</script>
 
 </body>
 
