@@ -4,7 +4,7 @@ from django.shortcuts import render, redirect
 from django.urls import reverse
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate
-from portal.models import Instructor, Policy, UrlCategories, Url
+from portal.models import Instructor, Policy, UrlCategories, Url, Course
 from django.contrib.auth import logout, login
 from django.views.decorators.csrf import csrf_exempt
 import json
@@ -25,7 +25,7 @@ def land(request):
 			# current_lecture, next_lecture ()
 			last_updated = datetime.datetime.now()
 			day = datetime.datetime.today().weekday()
-			time_now = request_time.hour
+			time_now = last_updated.hour
 			later_courses = Course.objects.filter(lecture__slot__day=day, lecture__slot__start__gt=time_now).order_by('lecture__slot__start')
 			cur_course = Course.objects.filter(lecture__slot__start=time_now, lecture__slot__day=day)[0]
 			next_course = later_courses[0]

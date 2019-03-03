@@ -29,28 +29,25 @@
                                                 <div class="row card-block">
                                                     <div class="col-md-12">
                                                         <ul class="list-view">
-                                                            {% for course in courses % }
                                                             <li>
                                                                 <div class="card list-view-media ">
                                                                     <div class="card-block">
                                                                         <div class="media">
                                                                             <div class="media-body">
                                                                                 <div class="col-xs-12">
-                                                                                    <h1 class="d-inline-block">
-                                                                                        {{ course.code }}</h1>
+                                                                                    <h1 class="d-inline-block">CS 101</h1>
                                                                                 </div>
                                                                                 <div class="f-13 text-muted m-b-15">
-                                                                                    {{ course.name }}
+                                                                                    Computer Programming
                                                                                 </div>
                                                                                 <p>
-                                                                                	<b>Current Policy</b>: {{ course.policy.name }}<br>
+                                                                                	<b>Current Policy</b>: <br>
                                                                                 </p>
                                                                             </div>
                                                                         </div>
                                                                     </div>
                                                                 </div>
                                                             </li>
-                                                            {% endfor %}
                                                             
                                                         </ul>
                                                     </div>
