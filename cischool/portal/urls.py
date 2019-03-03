@@ -32,4 +32,5 @@ urlpatterns = [
 	path('policy/<id>/', views.edit_policies, name='edit_policies'),
 	path('policy/fetch/', views.fetch_policy, name='fetch_policy'),
 	path('categories/', views.categories, name='categories'),
+	path('url/create/', views.create_url, name='create_url'),
 ]
