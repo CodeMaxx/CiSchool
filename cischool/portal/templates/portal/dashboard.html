@@ -86,15 +86,15 @@
                                                 <div class="card app-design">
                                                     <div class="card-block">
                                                         <button class="btn btn-primary f-right">On Going</button>
-                                                        <h1 class="f-w-400 text-muted">{{ next_course.code }}</h1>
-                                                        <p class="text-c-blue f-w-400">{{ next_course.name }}</p>
+                                                        <h1 class="f-w-400 text-muted">{{ current_course.code }}</h1>
+                                                        <p class="text-c-blue f-w-400">{{ current_course.name }}</p>
                                                         <div class="design-description d-inline-block m-r-40">
-                                                            <h3 class="f-w-400">{{ next_course.total_students }}</h3>
+                                                            <h3 class="f-w-400">{{ current_course.total_students }}</h3>
                                                             <p class="text-muted">Students</p>
                                                         </div>
                                                         <div class="design-description d-inline-block">
-                                                            <h3 class="f-w-400">7.4</h3>
-                                                            <p class="text-muted">Network Restrictiveness</p>
+                                                            <h3 class="f-w-400">{{ current_course.policy.name }}</h3>
+                                                            <p class="text-muted"><a href="/policy/{{ current_course.policy.identity }}">Change policy</a></p>
                                                         </div>
                                                         <div class="team-box p-b-20">
                                                             <!-- <p class="d-inline-block m-r-20 f-w-400">Students</p> -->
@@ -126,8 +126,8 @@
                                                             <p class="text-muted">Students</p>
                                                         </div>
                                                         <div class="design-description d-inline-block">
-                                                            <h3 class="f-w-400">8.3</h3>
-                                                            <p class="text-muted">Network Restrictiveness</p>
+                                                            <h3 class="f-w-400">{{ next_course.policy.name }}</h3>
+                                                            <p class="text-muted"><a href="/policy/{{ next_course.policy.identity }}">Change policy</a></p>
                                                         </div>
                                                         <div class="team-box p-b-20">
                                                             <!-- <p class="d-inline-block m-r-20 f-w-400">Students</p> -->
@@ -221,10 +221,6 @@
 
                                         </div>
                                     </div>
-                                </div>
-
-                                <div id="styleSelector">
-
                                 </div>
                             </div>
                         </div>
