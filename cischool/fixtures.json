@@ -1,0 +1,339 @@
+[
+{
+    "model": "portal.venue",
+    "pk": 2,
+    "fields": {
+        "name": "Audi 1",
+        "router_ip": "1.1.1.1"
+    }
+},
+{
+    "model": "portal.venue",
+    "pk": 3,
+    "fields": {
+        "name": "Audi 2",
+        "router_ip": "2.2.2.2"
+    }
+},
+{
+    "model": "portal.venue",
+    "pk": 4,
+    "fields": {
+        "name": "Software Lab 3",
+        "router_ip": "3.3.3.3"
+    }
+},
+{
+    "model": "portal.slot",
+    "pk": 2,
+    "fields": {
+        "start": 16,
+        "day": 6
+    }
+},
+{
+    "model": "portal.slot",
+    "pk": 3,
+    "fields": {
+        "start": 17,
+        "day": 6
+    }
+},
+{
+    "model": "portal.slot",
+    "pk": 4,
+    "fields": {
+        "start": 18,
+        "day": 6
+    }
+},
+{
+    "model": "portal.instructor",
+    "pk": 3,
+    "fields": {
+        "user": [
+            "sajalnarang"
+        ]
+    }
+},
+{
+    "model": "portal.instructor",
+    "pk": 4,
+    "fields": {
+        "user": [
+            "sajalnarang"
+        ]
+    }
+},
+{
+    "model": "portal.instructor",
+    "pk": 5,
+    "fields": {
+        "user": [
+            "sajalnarang"
+        ]
+    }
+},
+{
+    "model": "portal.instructor",
+    "pk": 6,
+    "fields": {
+        "user": [
+            "sajalnarang"
+        ]
+    }
+},
+{
+    "model": "portal.instructor",
+    "pk": 7,
+    "fields": {
+        "user": [
+            "sajalnarang"
+        ]
+    }
+},
+{
+    "model": "portal.instructor",
+    "pk": 8,
+    "fields": {
+        "user": [
+            "sajalnarang"
+        ]
+    }
+},
+{
+    "model": "portal.student",
+    "pk": "codemaxx",
+    "fields": {
+        "name": "Akash"
+    }
+},
+{
+    "model": "portal.student",
+    "pk": "darshan10k",
+    "fields": {
+        "name": "Darshan"
+    }
+},
+{
+    "model": "portal.student",
+    "pk": "nihal111",
+    "fields": {
+        "name": "Nihal"
+    }
+},
+{
+    "model": "portal.student",
+    "pk": "sajalnarang",
+    "fields": {
+        "name": "Sajal"
+    }
+},
+{
+    "model": "portal.lecture",
+    "pk": 2,
+    "fields": {
+        "venue": 2,
+        "slot": 2
+    }
+},
+{
+    "model": "portal.lecture",
+    "pk": 3,
+    "fields": {
+        "venue": 3,
+        "slot": 3
+    }
+},
+{
+    "model": "portal.lecture",
+    "pk": 4,
+    "fields": {
+        "venue": 4,
+        "slot": 4
+    }
+},
+{
+    "model": "portal.url",
+    "pk": "005056BB-0B24-0ed3-0000-858993527847",
+    "fields": {
+        "url": "http://facebook.com",
+        "name": "Facebook",
+        "desc": "fb"
+    }
+},
+{
+    "model": "portal.url",
+    "pk": "005056BB-0B24-0ed3-0000-858993527850",
+    "fields": {
+        "url": "http://icici.com",
+        "name": "ICICI Bank",
+        "desc": "ICICI"
+    }
+},
+{
+    "model": "portal.url",
+    "pk": "005056BB-0B24-0ed3-0000-858993527853",
+    "fields": {
+        "url": "http://researchgate.com",
+        "name": "Research Gate",
+        "desc": "RG"
+    }
+},
+{
+    "model": "portal.urlcategories",
+    "pk": "005056BB-0B24-0ed3-0000-858993527848",
+    "fields": {
+        "name": "Social Media",
+        "reputation": "BENIGN",
+        "link": "http://facebook.com"
+    }
+},
+{
+    "model": "portal.urlcategories",
+    "pk": "005056BB-0B24-0ed3-0000-858993527851",
+    "fields": {
+        "name": "Banking",
+        "reputation": "BENIGN",
+        "link": "http://icicibank.com"
+    }
+},
+{
+    "model": "portal.urlcategories",
+    "pk": "005056BB-0B24-0ed3-0000-858993527854",
+    "fields": {
+        "name": "Academia",
+        "reputation": "BENIGN",
+        "link": "http://researchgate.net"
+    }
+},
+{
+    "model": "portal.rule",
+    "pk": 2,
+    "fields": {
+        "name": "Block Facebook",
+        "enabled": true,
+        "action": "BLOCK",
+        "urls": [
+            "005056BB-0B24-0ed3-0000-858993527847"
+        ],
+        "url_categories": [
+            "005056BB-0B24-0ed3-0000-858993527848"
+        ]
+    }
+},
+{
+    "model": "portal.rule",
+    "pk": 3,
+    "fields": {
+        "name": "Bank Rule",
+        "enabled": true,
+        "action": "ALLOW",
+        "urls": [
+            "005056BB-0B24-0ed3-0000-858993527850"
+        ],
+        "url_categories": [
+            "005056BB-0B24-0ed3-0000-858993527851"
+        ]
+    }
+},
+{
+    "model": "portal.rule",
+    "pk": 4,
+    "fields": {
+        "name": "Academic Rule",
+        "enabled": true,
+        "action": "ALLOW",
+        "urls": [
+            "005056BB-0B24-0ed3-0000-858993527853"
+        ],
+        "url_categories": [
+            "005056BB-0B24-0ed3-0000-858993527854"
+        ]
+    }
+},
+{
+    "model": "portal.policy",
+    "pk": "005056BB-0B24-0ed3-0000-858993527846",
+    "fields": {
+        "name": "Social Media",
+        "desc": "Bans all social media websites",
+        "action": "BLOCK",
+        "rules": [
+            2
+        ]
+    }
+},
+{
+    "model": "portal.policy",
+    "pk": "005056BB-0B24-0ed3-0000-858993527849",
+    "fields": {
+        "name": "Banking Whitelist",
+        "desc": "Allow only banking websites",
+        "action": "ALLOW",
+        "rules": [
+            3
+        ]
+    }
+},
+{
+    "model": "portal.policy",
+    "pk": "005056BB-0B24-0ed3-0000-858993527852",
+    "fields": {
+        "name": "Academic Whitelist",
+        "desc": "Allow only academic websites",
+        "action": "ALLOW",
+        "rules": [
+            4
+        ]
+    }
+},
+{
+    "model": "portal.course",
+    "pk": 1,
+    "fields": {
+        "name": "Computer Programming and Utilization",
+        "code": "CS 101",
+        "lecture": 2,
+        "instructor": 3,
+        "policy": "005056BB-0B24-0ed3-0000-858993527846",
+        "students": [
+            "codemaxx",
+            "nihal111",
+            "sajalnarang"
+        ]
+    }
+},
+{
+    "model": "portal.course",
+    "pk": 2,
+    "fields": {
+        "name": "Computer Networks",
+        "code": "CS 224",
+        "lecture": 3,
+        "instructor": 5,
+        "policy": "005056BB-0B24-0ed3-0000-858993527849",
+        "students": [
+            "codemaxx",
+            "darshan10k",
+            "sajalnarang"
+        ]
+    }
+},
+{
+    "model": "portal.course",
+    "pk": 3,
+    "fields": {
+        "name": "Network Security",
+        "code": "EE 777",
+        "lecture": 4,
+        "instructor": 7,
+        "policy": "005056BB-0B24-0ed3-0000-858993527852",
+        "students": [
+            "codemaxx",
+            "nihal111",
+            "sajalnarang"
+        ]
+    }
+}
+]
