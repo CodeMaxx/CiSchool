@@ -22,8 +22,16 @@ def land(request):
 		instructor = Instructor.objects.get(user=user)
 		if instructor is not None:
 			# current lecture, upcoming lecture, name of policies,
-			return redirect(reverse('portal:dashboard'))
-	return render(request, 'portal/landing.html')
+			# current_lecture, next_lecture ()
+			last_updated = datetime.datetime.now()
+			day = datetime.datetime.today().weekday()
+			time_now = request_time.hour
+			instr_courses = Course.objects.filter(lecture__slot__day=day, lecture__slot__start__gt=time_now).order_by('lecture__slot__start')[0]
+			cur_course = Course.objects.filter(lecture__slot__start=time_now, lecture__slot__day=day)[0]
+
+			context = {'current_course': cur_course, 'next_course': next_course, 'last_updated': last_updated}
+			return redirect(reverse('portal:dashboard'), context=context)
+	return redirect(reverse('portal:landing'))
 
 @csrf_exempt
 def register(request):
@@ -85,20 +93,6 @@ def policy_toolbox(request):
 	context = {'hello': 'world'}
 	return render(request, 'portal/ptoolbox.html', context)
 
-@login_required
-def policy_edit(request):
-	context = {'hello': 'world'}
-	return render(request, 'portal/policyedit.html', context)
-
-@login_required
-def filter_edit(request):
-	context = {'hello': 'world'}
-	return render(request, 'portal/filteredit.html', context)
-
-@login_required
-def category_edit(request):
-	context = {'hello': 'world'}
-	return render(request, 'portal/categoryedit.html', context)
 
 @login_required
 def rule_edit(request):
@@ -137,12 +131,118 @@ def get_auth_token(server):
 
 def categories(request):
 	all_entries = UrlCategories.objects.all()
-	return render(request, 'categories.html', context={'categories': all_entries})
+	return render(request, 'portal/categories.html', context={'categories': all_entries})
 
 
 def policies(request):
 	policies = Policy.objects.all()
 	return render(request, 'portal/policies.html', context={'policies': policies})
+
+
+def create_url(request):
+	if request.method == 'POST':
+		headers['X-auth-access-token'] = auth_token
+
+		api_path = "/api/fmc_config/v1/domain/e276abec-e0f2-11e3-8169-6d9ed49b625f/object/urls"    # param
+		url = server + api_path
+		if (url[-1] == '/'):
+		    url = url[:-1]
+
+		# POST OPERATION
+		post_data = {
+		    "type": "Url",
+		    "name": request.POST["name"],
+		    "description": request.POST["description"],
+		    "url": request.POST["url"]
+		}
+
+		try:
+		    # REST call with SSL verification turned off:
+		    r = requests.post(url, data=post_data,
+		                      headers=headers, verify=False)
+		    # REST call with SSL verification turned on:
+		    # r = requests.post(url, data=json.dumps(post_data), headers=headers, verify='/path/to/ssl_certificate')
+		    status_code = r.status_code
+		    resp = r.text
+		    print("Status code is: " + str(status_code))
+		    if status_code == 201 or status_code == 202:
+		        print ("Post was successful...")
+		        json_resp = json.loads(resp)
+		        print(json.dumps(json_resp, sort_keys=True,
+		                         indent=4, separators=(',', ': ')))
+		    else:
+		        r.raise_for_status()
+		        print ("Error occurred in POST --> " + resp)
+		except requests.exceptions.HTTPError as err:
+		    print ("Error in connection --> " + str(err))
+		finally:
+		    if r:
+		        r.close()
+
+
+def create_rule(request):
+	if request.method == 'POST':
+		headers['X-auth-access-token'] = auth_token
+		api_path = "/api/fmc_config/v1/domain/e276abec-e0f2-11e3-8169-6d9ed49b625f/policy/accesspolicies/{}/accessrules".format(request.POST["container"])    # param
+		url = server + api_path
+		if (url[-1] == '/'):
+		    url = url[:-1]
+
+		urls = []
+		for url in request.POST["urls"]:
+			ob = {
+				"name": url["name"],
+				"type": "Url",
+				"id": url["id"]
+			}
+			urls.append(ob)
+
+		urlcategories = []
+		for urlcategory in request.POST["urlcategories"]:
+			ob = {
+				"type": "UrlCategoryAndReputation",
+				"category": {
+					"name": urlcategory["name"],
+					"id": urlcategory["id"],
+					"type": "URLCategory"
+				},
+				"reputation": urlcategory["reputation"]
+			}
+			urlcategories.append(ob)
+
+		post_data = {
+		  "action": request.POST["action"],
+		  "enabled": True,
+		  "type": "AccessRule",
+		  "name": request.POST["name"],
+		  "urls": {
+		  	"objects": urls,
+		    "urlCategoriesWithReputation": urlcategories
+		  }
+		}
+
+		try:
+		    # REST call with SSL verification turned off:
+		    r = requests.post(url, data=post_data,
+		                      headers=headers, verify=False)
+		    # REST call with SSL verification turned on:
+		    # r = requests.post(url, data=json.dumps(post_data), headers=headers, verify='/path/to/ssl_certificate')
+		    status_code = r.status_code
+		    resp = r.text
+		    print("Status code is: " + str(status_code))
+		    if status_code == 201 or status_code == 202:
+		        print ("Post was successful...")
+		        json_resp = json.loads(resp)
+		        print(json.dumps(json_resp, sort_keys=True,
+		                         indent=4, separators=(',', ': ')))
+		    else:
+		        r.raise_for_status()
+		        print ("Error occurred in POST --> " + resp)
+		except requests.exceptions.HTTPError as err:
+		    print ("Error in connection --> " + str(err))
+		finally:
+		    if r:
+		        r.close()
 
 
 @login_required
