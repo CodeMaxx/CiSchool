@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate
-from portal.models import Instructor, Policy
+from portal.models import Instructor, Policy, UrlCategories
 from django.contrib.auth import logout
 import json
 import sys
@@ -109,12 +109,22 @@ def get_auth_token(server):
 	    sys.exit()
 
 
-@login_required
+def categories(request):
+	all_entries = UrlCategories.objects.all()
+	return render(request, 'categories.html', context={'categories': all_entries})
+
+
 def policies(request):
+	policies = Policy.objects.all()
+	return render(request, 'portal/policies.html', context={'policies': policies})
+
+
+@login_required
+def my_policies(request):
 	user = request.user
 	instructor = Instructor.objects.get(user=user)
 	policies = Policy.objects.filter(instructor=instructor)
-	return render(request, 'portal/policies.html', context={'policies': policies})
+	return render(request, 'portal/mypolicies.html', context={'policies': policies})
 
 
 @login_required
