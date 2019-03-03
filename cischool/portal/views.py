@@ -5,7 +5,7 @@ from django.urls import reverse
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate
 from portal.models import Instructor, Policy
-from django.contrib.auth import logout
+from django.contrib.auth import logout, login
 from django.views.decorators.csrf import csrf_exempt
 import json
 import sys
@@ -38,13 +38,14 @@ def register(request):
 		return redirect(reverse('portal:dashboard'))
 
 @csrf_exempt
-def login(request):
+def login_view(request):
 	if request.method == 'POST':
 		username = request.POST['username']
 		password = request.POST['password']
-		user = authenticate(username=username, password=password)
+		user = authenticate(request, username=username, password=password)
 		if user is not None:
-			return redirect(reverse('portal:landing'))
+			login(request, user)
+			return redirect(reverse('portal:dashboard'))
 		else:
 			return HttpResponse(status=401)
 	elif request.method == 'GET':
