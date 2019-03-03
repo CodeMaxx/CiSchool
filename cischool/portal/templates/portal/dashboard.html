@@ -311,7 +311,7 @@
                                                         <div class="progress-box">
                                                             <p class="d-inline-block m-r-20 f-w-400">Progress</p>
                                                             <div class="progress d-inline-block">
-                                                                <div class="progress-bar bg-c-blue" style="width:75% "><label id="progress"></label></div>
+                                                                <div class="progress-bar bg-c-blue" id="progressBar" style="width:75%"><label id="progress"></label></div>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -550,8 +550,10 @@
           "00" + ":" + m + ":" + s;
           document.getElementById('endTime').innerHTML =
           "00" + ":" + (59 - m) + ":" + (60 - s);
+          progress = Math.round((m + s / 60) * 100 / 60);
           document.getElementById('progress').innerHTML =
-          Math.round((m + s / 60) * 100 / 60) + "%";
+          progress + "%";
+          document.getElementById('progressBar').setAttribute("style", "width:" + progress + "%");
           var t = setTimeout(startTime, 500);
         }
         function checkTime(i) {
@@ -566,7 +568,7 @@
             var n = Math.sqrt( -2.0 * Math.log( u ) ) * Math.cos( 2.0 * Math.PI * v );
             document.getElementById('Bandwidth').innerHTML = 
             Math.round((n * 2 + 9) * 100) / 100 + " MB/s";
-            var t = setTimeout(randomBandwidth, 2000)
+            var t = setTimeout(randomBandwidth, 2000);
         }
 
         function start() {
