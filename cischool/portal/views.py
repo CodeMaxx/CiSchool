@@ -192,7 +192,7 @@ def create_rule(request):
 			ob = {
 				"type": "UrlCategoryAndReputation",
 				"category": {
-					"name": urlcategory["name"]
+					"name": urlcategory["name"],
 					"id": urlcategory["id"],
 					"type": "URLCategory"
 				},
