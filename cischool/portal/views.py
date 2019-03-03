@@ -33,7 +33,7 @@ def login(request):
 		else:
 			return HttpResponse(status=401)
 	elif request.method == 'GET':
-		return render(request, 'login.html')
+		return render(request, 'portal/login.html')
 
 
 @login_required
