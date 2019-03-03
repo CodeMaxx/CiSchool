@@ -30,23 +30,33 @@ class Lecture(models.Model):
 
 class Url(models.Model):
 	url = models.URLField()
-	id = models.IntegerField(primary_key=True)
+	identity = models.CharField(max_length=100, primary_key=True)
 	name = models.CharField(max_length=50)
 	desc = models.CharField(max_length=150)
 
 
+class UrlCategories(models.Model):
+	name = models.CharField(max_length=30)
+	identity = models.CharField(max_length=100, primary_key=True)
+	reputation = models.CharField(max_length=200)
+	link = models.URLField()
+
+
 class Rule(models.Model):
-	ip = models.CharField(max_length=15)
-	url = models.ForeignKey(Url, on_delete=models.CASCADE)
-	ports = models.CharField(max_length=50)
+	name = models.CharField(max_length=50)
+	enabled = models.BooleanField(default=True)
+	urls = models.ManyToManyField(Url)
+	url_categories = models.ManyToManyField(UrlCategories)
 	action = models.CharField(max_length=15)
 
 
 class Policy(models.Model):
+	name = models.CharField(max_length=50)
+	desc = models.CharField(max_length=150)
+	identity = models.CharField(max_length=100, primary_key=True)
 	rules = models.ManyToManyField(Rule)
+	action = models.CharField(max_length=15)
 	instructor = models.ForeignKey(Instructor)
-	white = models.BooleanField()
-
 
 class Course(models.Model):
 	lecture = models.ForeignKey(Lecture, on_delete=models.CASCADE)

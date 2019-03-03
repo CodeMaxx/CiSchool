@@ -21,5 +21,5 @@ import portal
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('/', include(('portal.urls', 'portal'), namespace='portal'))
+    path('', include(('portal.urls', 'portal'), namespace='portal'))
 ]
