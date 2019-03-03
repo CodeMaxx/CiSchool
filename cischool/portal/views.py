@@ -50,8 +50,6 @@ def login(request):
 def logout(request):
 	logout(request)
 
-
-@login_required
 def register(request):
 	context = {'hello': 'world'}
 	return render(request, 'portal/register.html', context)
