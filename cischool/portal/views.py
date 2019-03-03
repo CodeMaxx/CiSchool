@@ -1,10 +1,17 @@
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
+from django.urls import reverse
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate
+<<<<<<< HEAD
 from portal.models import Instructor, Policy, UrlCategories
 from django.contrib.auth import logout
+=======
+from portal.models import Instructor, Policy
+from django.contrib.auth import logout, login
+from django.views.decorators.csrf import csrf_exempt
+>>>>>>> 899f2d96a98f4b9b0a2a1a1c852565756ed92686
 import json
 import sys
 import requests
@@ -19,32 +26,33 @@ def land(request):
 		instructor = Instructor.objects.get(user=user)
 		if instructor is not None:
 			# current lecture, upcoming lecture, name of policies,
-			return render(request, 'portal/dashboard.html', context={})
+			return redirect(reverse('portal:dashboard'))
 	return render(request, 'portal/landing.html')
 
-
+@csrf_exempt
 def register(request):
 	if request.method == 'GET':
 		return render(request, 'portal/register.html')
 	elif request.method == 'POST':
-		first_name = request.POST['first_name']
-		last_name = request.POST['last_name']
+		# first_name = request.POST['first_name']
+		# last_name = request.POST['last_name']
 		username = request.POST['username']
 		password = request.POST['password']
-		user = User.objects.create_user(username=username, password=password, first_name=first_name, last_name=last_name)
+		user = User.objects.create_user(username=username, password=password)#, first_name=first_name, last_name=last_name)
 		user.save()
 		Instructor(user=user).save()
 		authenticate(request, username=username, password=password)
-		return redirect('landing')
+		return redirect(reverse('portal:dashboard'))
 
-
-def login(request):
+@csrf_exempt
+def login_view(request):
 	if request.method == 'POST':
 		username = request.POST['username']
 		password = request.POST['password']
-		user = authenticate(username=username, password=password)
+		user = authenticate(request, username=username, password=password)
 		if user is not None:
-			return redirect('landing')
+			login(request, user)
+			return redirect(reverse('portal:dashboard'))
 		else:
 			return HttpResponse(status=401)
 	elif request.method == 'GET':
@@ -52,8 +60,9 @@ def login(request):
 
 
 @login_required
-def logout(request):
+def logout_view(request):
 	logout(request)
+<<<<<<< HEAD
 
 
 def register(request):

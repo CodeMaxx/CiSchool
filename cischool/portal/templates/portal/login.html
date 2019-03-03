@@ -69,11 +69,11 @@
                                         </div>
                                     </div>
                                     <div class="form-group form-primary">
-                                        <input type="text" name="email" class="form-control" required="" placeholder="Your Email Address">
+                                        <input type="text" id="user_name" name="email" class="form-control" required="" placeholder="Your Username">
                                         <span class="form-bar"></span>
                                     </div>
                                     <div class="form-group form-primary">
-                                        <input type="password" name="password" class="form-control" required="" placeholder="Password">
+                                        <input type="password" id="pass_word" name="password" class="form-control" required="" placeholder="Password">
                                         <span class="form-bar"></span>
                                     </div>
                                     <div class="row m-t-25 text-left">
@@ -89,7 +89,7 @@
                                     </div>
                                     <div class="row m-t-30">
                                         <div class="col-md-12">
-                                            <button type="button" class="btn btn-primary btn-md btn-block waves-effect waves-light text-center m-b-20">Login</button>
+                                            <button id="login_btn" type="button" class="btn btn-primary btn-md btn-block waves-effect waves-light text-center m-b-20">Login</button>
                                         </div>
                                     </div>
                                 </div>
@@ -163,6 +163,13 @@
     <script type="text/javascript" src="{% static "portal\files\bower_components\i18next-browser-languagedetector\js\i18nextBrowserLanguageDetector.min.js" %}"></script>
     <script type="text/javascript" src="{% static "portal\files\bower_components\jquery-i18next\js\jquery-i18next.min.js" %}"></script>
     <script type="text/javascript" src="{% static "portal\files\assets\js\common-pages.js" %}"></script>
+        <script type="text/javascript">
+        $("#login_btn").click(function(){
+            $.post( "/login/", { username: $("#user_name").val(), password: $("#pass_word").val() }, function(){
+                window.location.replace('http://localhost:8000/dashboard/');
+            });
+        });
+    </script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
 <script>
