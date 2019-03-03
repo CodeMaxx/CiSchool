@@ -84,6 +84,11 @@ def policy_toolbox(request):
 	return render(request, 'portal/ptoolbox.html', context)
 
 
+@login_required
+def rule_edit(request):
+	context = {'hello': 'world'}
+	return render(request, 'portal/ruleedit.html', context)
+
 def get_auth_token(server):
 	username = "nihal.111"
 	password = "Tx6RWzAQ"

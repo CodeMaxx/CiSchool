@@ -1,0 +1,133 @@
+{% load static %}
+{% include 'portal/base.html' %}
+
+					<div class="pcoded-content">
+                        <div class="pcoded-inner-content">
+                            <!-- Main-body start -->
+                            <div class="main-body">
+                                <div class="page-wrapper">
+                                    <!-- Page-header start -->
+                                    <div class="page-header">
+                                        <div class="row align-items-end">
+                                            <div class="col-lg-8">
+                                                <div class="page-header-title">
+                                                    <div class="d-inline">
+                                                        <h4>Create Rule</h4>
+                                                        <span>Define the rules that form a policy.</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Page-header end -->
+
+                                <!-- Page body start -->
+                                <div class="page-body">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <!-- Multi-select start -->
+                                            <div class="card">
+
+                                                <div>
+                                                    <div>
+                                                        <label class="j-label ">Access Policy (Container)</label>
+                                                    </div>
+                                                        <div>
+                                                            <select name="select" class="form-control form-control-primary">
+                                                                <option value="opt1">Policy 1</option>
+                                                                <option value="opt2">Policy 2</option>
+                                                            </select>
+                                                        </div>
+                                                </div>
+                                                <br/>
+                                                <!-- start name -->
+                                                <div>
+                                                    <label class="j-label">Action</label>
+                                                    <div class="j-unit">
+                                                        <div class="j-input">
+                                                            <label for="Action"></label>
+                                                            <input type="text" id="Action" name="Action">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- end name -->
+                                                <!-- start name -->
+                                                <div>
+                                                    <label class="j-label">Name</label>
+                                                    <div class="j-unit">
+                                                        <div class="j-input">
+                                                            <label for="name"></label>
+                                                            <input type="text" id="Name" name="Name">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card-block">
+
+                                                    <div class="row">
+                                                        <div class="col-sm-12 col-xl-6 m-b-30">
+                                                            <h4 class="sub-title">URL Filtering</h4>
+                                                            <select id='custom-headers' class="searchable" multiple='multiple'>
+                                                                <option value='elem_1' selected="">elem 1</option>
+                                                                <option value='elem_2'>elem 2</option>
+                                                                <option value='elem_3'>elem 3</option>
+                                                                <option value='elem_4' selected="">elem 4</option>
+                                                                <option value='elem_5'>elem 5</option>
+                                                                <option value='elem_6'>elem 6</option>
+                                                                <option value='elem_7'>elem 7</option>
+                                                                <option value='elem_8'>elem 8</option>
+                                                                <option value='elem_9'>elem 9</option>
+                                                                <option value='elem_10'>elem 10</option>
+                                                                <option value='elem_11'>elem 11</option>
+                                                                <option value='elem_12'>elem 12</option>
+                                                                <option value='elem_13'>elem 13</option>
+                                                                <option value='elem_14'>elem 14</option>
+                                                                <option value='elem_15'>elem 15</option>
+                                                                <option value='elem_16'>elem 16</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+
+                                                <div class="card-block">
+
+                                                    <div class="row">
+                                                        <div class="col-sm-12 col-xl-6 m-b-30">
+                                                            <h4 class="sub-title">URL Categories</h4>
+                                                            <select id='custom-headers' class="searchable" multiple='multiple'>
+                                                                <option value='elem_1' selected="">elem 1</option>
+                                                                <option value='elem_2'>elem 2</option>
+                                                                <option value='elem_3'>elem 3</option>
+                                                                <option value='elem_4' selected="">elem 4</option>
+                                                                <option value='elem_5'>elem 5</option>
+                                                                <option value='elem_6'>elem 6</option>
+                                                                <option value='elem_7'>elem 7</option>
+                                                                <option value='elem_8'>elem 8</option>
+                                                                <option value='elem_9'>elem 9</option>
+                                                                <option value='elem_10'>elem 10</option>
+                                                                <option value='elem_11'>elem 11</option>
+                                                                <option value='elem_12'>elem 12</option>
+                                                                <option value='elem_13'>elem 13</option>
+                                                                <option value='elem_14'>elem 14</option>
+                                                                <option value='elem_15'>elem 15</option>
+                                                                <option value='elem_16'>elem 16</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <!-- Multi-select end -->
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Page body end -->
+                            </div>
+                        </div>
+                        <!-- Main-body end -->
+                        <div id="styleSelector">
+
+                        </div>
+                    </div>
+
+{% include 'portal/scripts.html' %}
