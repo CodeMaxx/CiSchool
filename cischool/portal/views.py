@@ -10,6 +10,7 @@ from django.views.decorators.csrf import csrf_exempt
 import json
 import sys
 import requests
+import datetime
 
 server = "https://fmcrestapisandbox.cisco.com"
 
@@ -21,8 +22,16 @@ def land(request):
 		instructor = Instructor.objects.get(user=user)
 		if instructor is not None:
 			# current lecture, upcoming lecture, name of policies,
-			return redirect(reverse('portal:dashboard'))
-	return render(request, 'portal/landing.html')
+			# current_lecture, next_lecture ()
+			last_updated = datetime.datetime.now()
+			day = datetime.datetime.today().weekday()
+			time_now = request_time.hour
+			instr_courses = Course.objects.filter(lecture__slot__day=day, lecture__slot__start__gt=time_now).order_by('lecture__slot__start')[0]
+			cur_course = Course.objects.filter(lecture__slot__start=time_now, lecture__slot__day=day)[0]
+
+			context = {'current_course': cur_course, 'next_course': next_course, 'last_updated': last_updated}
+			return redirect(reverse('portal:dashboard'), context=context)
+	return redirect(reverse('portal:landing'))
 
 @csrf_exempt
 def register(request):
