@@ -43,13 +43,23 @@ def login(request):
 		else:
 			return HttpResponse(status=401)
 	elif request.method == 'GET':
-		return render(request, 'login.html')
+		return render(request, 'portal/login.html')
 
 
 @login_required
 def logout(request):
 	logout(request)
 
+
+@login_required
+def register(request):
+	context = {'hello': 'world'}
+	return render(request, 'portal/register.html', context)
+
+@login_required
+def dashboard(request):
+	context = {'hello': 'world'}
+	return render(request, 'portal/dashboard.html', context)
 
 @login_required
 def courses(request):
