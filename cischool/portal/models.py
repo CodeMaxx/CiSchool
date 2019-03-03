@@ -14,7 +14,7 @@ class Slot(models.Model):
 
 
 class Instructor(models.Model):
-	user = models.ForeignKey(User)
+	user = models.ForeignKey(User, on_delete=models.CASCADE)
 	name = models.CharField(max_length=50)
 
 
@@ -44,7 +44,7 @@ class Rule(models.Model):
 
 class Policy(models.Model):
 	rules = models.ManyToManyField(Rule)
-	instructor = models.ForeignKey(Instructor)
+	instructor = models.ForeignKey(Instructor, on_delete=models.CASCADE)
 	white = models.BooleanField()
 
 

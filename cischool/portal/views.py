@@ -3,7 +3,8 @@ from django.shortcuts import render
 # Create your views here.
 
 def land(request):
-	pass
+	context = {'hello': 'world'}
+	return render(request, 'portal/landing.html', context)
 
 
 def login(request):
