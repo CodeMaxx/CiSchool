@@ -14,13 +14,13 @@ def land(request):
 		instructor = Instructor.objects.get(user=user)
 		if instructor is not None:
 			# current lecture, upcoming lecture, name of policies,
-			return render(request, 'dashboard.html', context={})
-	return render(request, 'landing.html')
+			return render(request, 'portal/dashboard.html', context={})
+	return render(request, 'portal/landing.html')
 
 
 def register(request):
 	if request.method == 'GET':
-		return render(request, 'register.html')
+		return render(request, 'portal/register.html')
 	elif request.method == 'POST':
 		first_name = request.POST['first_name']
 		last_name = request.POST['last_name']
@@ -66,7 +66,7 @@ def courses(request):
 	user = request.user
 	instructor = Instructor.objects.get(user=user)
 	courses = Policy.objects.filter(instructor=instructor)
-	return render(request, 'courses.html', context={'courses': courses})
+	return render(request, 'portal/courses.html', context={'courses': courses})
 
 
 @login_required
@@ -79,13 +79,13 @@ def policies(request):
 	user = request.user
 	instructor = Instructor.objects.get(user=user)
 	policies = Policy.objects.filter(instructor=instructor)
-	return render(request, 'policies.html', context={'policies': policies})
+	return render(request, 'portal/policies.html', context={'policies': policies})
 
 @login_required
 def edit_policies(request, pk):
 	if request.method == 'GET':
 		policy = Policy.objects.get(pk=pk)
 		context = {'policy': policy}
-		return render(request, 'edit_policy.html', context=context)
+		return render(request, 'portal/edit_policy.html', context=context)
 	elif request.method == 'POST':
 		raise NotImplementedError
