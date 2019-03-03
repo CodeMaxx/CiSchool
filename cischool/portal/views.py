@@ -8,15 +8,16 @@ def land(request):
 
 
 def login(request):
-	pass
-
+	context = {'hello': 'world'}
+	return render(request, 'portal/login.html', context)
 
 def logout(request):
 	pass
 
 
-def register(reqeust):
-	pass
+def register(request):
+	context = {'hello': 'world'}
+	return render(request, 'portal/register.html', context)
 
 
 def courses(request):
