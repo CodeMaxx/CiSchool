@@ -9,18 +9,28 @@ from django.contrib.auth import logout
 # Create your views here.
 
 def land(request):
-	context = {'hello': 'world'}
-	return render(request, 'portal/landing.html', context)
+	user = request.user
+	if user.is_authenticated:
+		instructor = Instructor.objects.get(user=user)
+		if instructor is not None:
+			# current lecture, upcoming lecture, name of policies,
+			return render(request, 'dashboard.html', context={})
+	return render(request, 'landing.html')
 
 
 def register(request):
-	first_name = request.POST['first_name']
-	last_name = request.POST['last_name']
-	username = request.POST['username']
-	password = request.POST['password']
-	user = User.objects.create_user(username=username, password=password, first_name=first_name, last_name=last_name)
-	user.save()
-	Instructor(user=user).save()
+	if request.method == 'GET':
+		return render(request, 'register.html')
+	elif request.method == 'POST':
+		first_name = request.POST['first_name']
+		last_name = request.POST['last_name']
+		username = request.POST['username']
+		password = request.POST['password']
+		user = User.objects.create_user(username=username, password=password, first_name=first_name, last_name=last_name)
+		user.save()
+		Instructor(user=user).save()
+		authenticate(request, username=username, password=password)
+		return redirect('landing')
 
 
 def login(request):
@@ -39,7 +49,6 @@ def login(request):
 @login_required
 def logout(request):
 	logout(request)
-	pass
 
 
 @login_required
@@ -51,7 +60,7 @@ def courses(request):
 
 
 @login_required
-def edit_course(request):
+def edit_course(request, pk):
 	pass
 
 
@@ -63,5 +72,10 @@ def policies(request):
 	return render(request, 'policies.html', context={'policies': policies})
 
 @login_required
-def edit_policies(request):
-	pass
+def edit_policies(request, pk):
+	if request.method == 'GET':
+		policy = Policy.objects.get(pk=pk)
+		context = {'policy': policy}
+		return render(request, 'edit_policy.html', context=context)
+	elif request.method == 'POST':
+		raise NotImplementedError
