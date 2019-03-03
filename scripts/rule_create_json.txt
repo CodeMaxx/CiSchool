@@ -1,0 +1,24 @@
+{
+  "action": "ALLOW",
+  "enabled": true,
+  "type": "AccessRule",
+  "name": "Rule1",
+  "urls": {
+  	"objects": [{
+  	"name": "Google",
+  	"type": "Url",
+  	"id": "005056BB-0B24-0ed3-0000-858993527655"
+  	}],
+    "urlCategoriesWithReputation": [
+      {
+        "type": "UrlCategoryAndReputation",
+        "category": {
+          "name": "Weapons",
+          "id": "a774acd8-8240-11e0-9682-6814b504fd36",
+          "type": "URLCategory"
+        },
+        "reputation": "BENIGN_SITES_WITH_SECURITY_RISKS"
+      }
+    ]
+  }
+}
