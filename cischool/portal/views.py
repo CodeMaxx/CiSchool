@@ -4,7 +4,7 @@ from django.shortcuts import render, redirect
 from django.urls import reverse
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate
-from portal.models import Instructor, Policy, UrlCategories
+from portal.models import Instructor, Policy, UrlCategories, Url
 from django.contrib.auth import logout, login
 from django.views.decorators.csrf import csrf_exempt
 import json
@@ -26,10 +26,11 @@ def land(request):
 			last_updated = datetime.datetime.now()
 			day = datetime.datetime.today().weekday()
 			time_now = request_time.hour
-			instr_courses = Course.objects.filter(lecture__slot__day=day, lecture__slot__start__gt=time_now).order_by('lecture__slot__start')[0]
+			later_courses = Course.objects.filter(lecture__slot__day=day, lecture__slot__start__gt=time_now).order_by('lecture__slot__start')
 			cur_course = Course.objects.filter(lecture__slot__start=time_now, lecture__slot__day=day)[0]
-
-			context = {'current_course': cur_course, 'next_course': next_course, 'last_updated': last_updated}
+			next_course = later_courses[0]
+			upcoming_course = later_courses[1]
+			context = {'current_course': cur_course, 'next_course': next_course, 'upcoming_course': upcoming_course, 'last_updated': last_updated}
 			return redirect(reverse('portal:dashboard'), context=context)
 	return redirect(reverse('portal:landing'))
 
@@ -128,6 +129,8 @@ def get_auth_token(server):
 	    print ("Error in generating auth token --> " + str(err))
 	    sys.exit()
 
+	return auth_token
+
 
 def categories(request):
 	all_entries = UrlCategories.objects.all()
@@ -138,9 +141,18 @@ def policies(request):
 	policies = Policy.objects.all()
 	return render(request, 'portal/policies.html', context={'policies': policies})
 
+def success(request):
+	return render(request, 'portal/success.html')
+
 
 def create_url(request):
+	if request.method == 'GET':
+		policies = Policy.objects.all()
+		return render(request, 'portal/create_url.html', context={'policies': policies})
+
 	if request.method == 'POST':
+		auth_token = get_auth_token(server)
+		headers = {'Content-Type': 'application/json'}
 		headers['X-auth-access-token'] = auth_token
 
 		api_path = "/api/fmc_config/v1/domain/e276abec-e0f2-11e3-8169-6d9ed49b625f/object/urls"    # param
@@ -158,7 +170,7 @@ def create_url(request):
 
 		try:
 		    # REST call with SSL verification turned off:
-		    r = requests.post(url, data=post_data,
+		    r = requests.post(url, data=json.dumps(post_data),
 		                      headers=headers, verify=False)
 		    # REST call with SSL verification turned on:
 		    # r = requests.post(url, data=json.dumps(post_data), headers=headers, verify='/path/to/ssl_certificate')
@@ -170,6 +182,7 @@ def create_url(request):
 		        json_resp = json.loads(resp)
 		        print(json.dumps(json_resp, sort_keys=True,
 		                         indent=4, separators=(',', ': ')))
+		        
 		    else:
 		        r.raise_for_status()
 		        print ("Error occurred in POST --> " + resp)
@@ -179,9 +192,20 @@ def create_url(request):
 		    if r:
 		        r.close()
 
+		return redirect(reverse("portal:success"))
+
 
 def create_rule(request):
+	if request.method == 'GET':
+		policies = Policy.objects.all()
+		categories = UrlCategories.objects.all()
+		urls = Url.objects.all()
+
+		return render(request, 'portal/create_rule.html', context={'policies': policies,'categories': categories,'urls': urls})
+
 	if request.method == 'POST':
+		print(request.POST)
+		headers = {'Content-Type': 'application/json'}
 		headers['X-auth-access-token'] = auth_token
 		api_path = "/api/fmc_config/v1/domain/e276abec-e0f2-11e3-8169-6d9ed49b625f/policy/accesspolicies/{}/accessrules".format(request.POST["container"])    # param
 		url = server + api_path
@@ -223,7 +247,7 @@ def create_rule(request):
 
 		try:
 		    # REST call with SSL verification turned off:
-		    r = requests.post(url, data=post_data,
+		    r = requests.post(url, data=json.dumps(post_data),
 		                      headers=headers, verify=False)
 		    # REST call with SSL verification turned on:
 		    # r = requests.post(url, data=json.dumps(post_data), headers=headers, verify='/path/to/ssl_certificate')
@@ -254,20 +278,22 @@ def my_policies(request):
 
 
 @login_required
-def edit_policies(request, id):
+def edit_policies(request, idx):
 	if request.method == 'GET':
-		policy = Policy.objects.get(pk=pk)
+		policy = Policy.objects.get(identity=idx)
 		context = {'policy': policy}
 		return render(request, 'portal/edit_policy.html', context=context)
 	elif request.method == 'POST':
 		raise NotImplementedError
 
 
+@login_required
 def create_policy(request):
 	if request.method == 'GET':
 		return render(request, 'portal/create_policy.html')
 	elif request.method == 'POST':
 		auth_token = get_auth_token(server)
+		headers = {'Content-Type': 'application/json'}
 		headers['X-auth-access-token'] = auth_token
 
 		api_path = "/api/fmc_config/v1/domain/e276abec-e0f2-11e3-8169-6d9ed49b625f/policy/accesspolicies"    # param
@@ -304,7 +330,7 @@ def create_policy(request):
 		finally:
 		    if r:
 		        r.close()
-		return redirect(reverse("portal:edit_policies"))
+		return redirect("portal:edit_policies", id=1)
 
 
 def fetch_policy(request):

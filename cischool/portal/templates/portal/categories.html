@@ -30,30 +30,13 @@
                                                 <div class="row card-block">
                                                     <div class="col-md-12 col-lg-4">
                                                         <ul class="basic-list list-icons">
-
-                                                            {{ categories.0.name }}
-                                                            {% for item in categories %}
-                                                                {{ forloop.counter0 }} {# starting index 0 #}
-                                                                {{ categories.index.name }}
+                                                            {% for cat in categories %}
+                                                            <li><h6 style="padding-top: 5px; font-size: 14pt">
+                                                                <i style="float:left;" class="icofont icofont-speech-comments text-primary p-absolute text-center d-block f-30"></i>
+                                                                {{ cat.name }}</h6>
+                                                                <br/>
+                                                            </li>
                                                             {% endfor %}
-                                                            <li>
-                                                                <h3>Heading</h3>
-                                                                <i style="float:left; margin:10px" class="icofont icofont-speech-comments text-primary p-absolute text-center d-block f-30"></i>
-                                                                <p>Laborum nihil aliquam nulla praesentium illo libero
-                                                                    nihil at odio maxime.</p>
-                                                            </li>
-                                                            <li>
-                                                                <h3>Heading</h3>
-                                                                <i style="float:left; margin:10px" class="icofont icofont-warning  text-primary p-absolute text-center d-block f-30"></i>
-                                                                <p>Laborum nihil aliquam nulla praesentium illo libero
-                                                                    nihil at odio maxime.</p>
-                                                            </li>
-                                                            <li>
-                                                                <h3>Heading</h3>
-                                                                <i style="float:left; margin:10px" class="icofont icofont-bell-alt text-primary p-absolute text-center d-block f-30"></i>
-                                                                <p>Laborum nihil aliquam nulla praesentium illo libero
-                                                                    nihil at odio maxime.</p>
-                                                            </li>
                                                         </ul>
                                                     </div>
                                                     </div>
