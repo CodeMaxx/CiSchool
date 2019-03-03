@@ -1,0 +1,100 @@
+{% load static %}
+{% include 'portal/base.html' %}
+
+                <div class="pcoded-content">
+                    <div class="pcoded-inner-content">
+                        <!-- Main-body start -->
+                        <div class="main-body">
+                            <div class="page-wrapper">
+                                <!-- Page-header start -->
+                                <div class="page-header">
+                                    <div class="row align-items-end">
+                                        <div class="col-lg-8">
+                                            <div class="page-header-title">
+                                                <div class="d-inline">
+                                                    <h4>Access Policy</h4>
+                                                    <span>Create an Access Policy</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Page-header end -->
+
+                                    <!-- Page body start -->
+                                    <div class="page-body">
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <!-- Register your self card start -->
+                                                <div class="card">
+                                                    <div class="card-block">
+                                                        <div class="j-wrapper j-wrapper-640">
+                                                            <form action="j-pro/php/action.php" method="post" class="j-pro" id="j-pro" novalidate="">
+                                                                <div class="j-content">
+                                                                    <!-- start name -->
+                                                                    <div>
+                                                                        <label class="j-label">Name</label>
+                                                                        <div class="j-unit">
+                                                                            <div class="j-input">
+                                                                                <label for="name"></label>
+                                                                                <input type="text" id="Name" name="Name">
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <!-- end name -->
+                                                                    <!-- start email -->
+                                                                    <div>
+                                                                        <div>
+                                                                            <label class="j-label">Description</label>
+                                                                        </div>
+                                                                        <div class="j-unit">
+                                                                            <div class="j-input">
+                                                                                <label for="description"></label>
+                                                                                <input type="text" id="description" name="description">
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <!-- end email -->
+                                                                    <!-- start login -->
+                                                                    <div>
+                                                                        <div>
+                                                                            <label class="j-label ">Default Action</label>
+                                                                        </div>
+                                                                            <div>
+                                                                                <select name="select" class="form-control form-control-primary">
+                                                                                    <option value="opt1">ALLOW</option>
+                                                                                    <option value="opt2">BLOCK</option>
+                                                                                </select>
+                                                                            </div>
+                                                                    </div>
+                                                                    <!-- end login -->
+                                                                    <!-- start response from server -->
+                                                                    <div class="j-response"></div>
+                                                                    <!-- end response from server -->
+                                                                </div>
+                                                                <!-- end /.content -->
+                                                                <div class="j-footer">
+                                                                    <button type="submit" class="btn btn-primary">Create</button>
+                                                                </div>
+                                                                <!-- end /.footer -->
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- Register your self card end -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Page body end -->
+                                </div>
+                            </div>
+                            <!-- Main-body end -->
+
+                            <div id="styleSelector">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+{% include 'portal/scripts.html' %}

@@ -80,6 +80,16 @@ def policy_toolbox(request):
 	return render(request, 'portal/ptoolbox.html', context)
 
 @login_required
+def policy_edit(request):
+	context = {'hello': 'world'}
+	return render(request, 'portal/policyedit.html', context)
+
+@login_required
+def filter_edit(request):
+	context = {'hello': 'world'}
+	return render(request, 'portal/filteredit.html', context)
+
+@login_required
 def policies(request):
 	user = request.user
 	instructor = Instructor.objects.get(user=user)

@@ -3,10 +3,15 @@
     <script type="text/javascript" src="{% static "portal\files\bower_components\jquery-ui\js\jquery-ui.min.js" %}"></script>
     <script type="text/javascript" src="{% static "portal\files\bower_components\popper.js\js\popper.min.js" %}"></script>
     <script type="text/javascript" src="{% static "portal\files\bower_components\bootstrap\js\bootstrap.min.js" %}"></script>
+    <!-- j-pro js -->
+    <script type="text/javascript" src="{% static "portal\files\assets\pages\j-pro\js\jquery.ui.min.js" %}"></script>
+    <script type="text/javascript" src="{% static "portal\files\assets\pages\j-pro\js\jquery.maskedinput.min.js" %}"></script>
+    <script type="text/javascript" src="{% static "portal\files\assets\pages\j-pro\js\jquery.j-pro.js" %}"></script>
     <!-- jquery slimscroll js -->
     <script type="text/javascript" src="{% static "portal\files\bower_components\jquery-slimscroll\js\jquery.slimscroll.js" %}"></script>
     <!-- modernizr js -->
     <script type="text/javascript" src="{% static "portal\files\bower_components\modernizr\js\modernizr.js" %}"></script>
+    <script type="text/javascript" src="{% static "portal\files\bower_components\modernizr\js\css-scrollbars.js" %}"></script>
     <!-- Chart js -->
     <script type="text/javascript" src="{% static "portal\files\bower_components\chart.js\js\Chart.js" %}"></script>
     <!-- amchart js -->
@@ -15,53 +20,16 @@
     <script src="{% static "portal\files\assets\pages\widget\amchart\light.js" %}"></script>
     <script src="{% static "portal\files\assets\js\jquery.mCustomScrollbar.concat.min.js" %}"></script>
     <script type="text/javascript" src="{% static "portal\files\assets\js\SmoothScroll.js" %}"></script>
+
+    <script type="text/javascript" src="{% static "portal\files\assets\pages\j-pro\js\custom\reg-form.js" %}"></script>
     <script src="{% static "portal\files\assets\js\pcoded.min.js" %}"></script>
     <!-- custom js -->
+
     <script src="{% static "portal\files\assets\js\vartical-layout.min.js" %}"></script>
+    <script src={% static "portal\files\assets\js\jquery.mCustomScrollbar.concat.min.js" %}"></script>
     <script type="text/javascript" src="{% static "portal\files\assets\pages\dashboard\custom-dashboard.js" %}"></script>
     <script type="text/javascript" src="{% static "portal\files\assets\js\script.min.js" %}"></script>
-    <script type="text/javascript">
-        function startTime() {
-          var today = new Date();
-          var m = today.getMinutes();
-          var s = today.getSeconds();
-          m = checkTime(m);
-          s = checkTime(s);
-          document.getElementById('startTime').innerHTML =
-          "00" + ":" + m + ":" + s;
-          document.getElementById('endTime').innerHTML =
-          "00" + ":" + (59 - m) + ":" + (60 - s);
-          var t = setTimeout(startTime, 500);
-        }
-        function checkTime(i) {
-          if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
-          return i;
-        }
 
-        function randomBandwidth() {
-            var u = 0, v = 0;
-            while(u === 0) u = Math.random(); //Converting [0,1) to (0,1)
-            while(v === 0) v = Math.random();
-            var n = Math.sqrt( -2.0 * Math.log( u ) ) * Math.cos( 2.0 * Math.PI * v );
-            document.getElementById('Bandwidth').innerHTML = 
-            Math.round((n * 2 + 9) * 100) / 100 + " MB/s";
-            var t = setTimeout(randomBandwidth, 2000)
-        }
-
-        function start() {
-            startTime();
-            randomBandwidth();
-        }
-    </script>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-23581568-13');
-</script>
 </body>
 
 </html>
