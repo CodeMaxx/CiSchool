@@ -167,6 +167,9 @@
         $("#login_btn").click(function(){
             $.post( "/login/", { username: $("#user_name").val(), password: $("#pass_word").val() }, function(){
                 window.location.replace('http://localhost:8000/dashboard/');
+            })
+            .fail(function() {
+                alert("Authentication failure.");
             });
         });
     </script>
