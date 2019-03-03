@@ -27,7 +27,7 @@
 
     <script src="{% static "portal\files\assets\js\vartical-layout.min.js" %}"></script>
     <script src="{% static "portal\files\assets\js\jquery.mCustomScrollbar.concat.min.js" %}"></script>
-    <!-- <script type="text/javascript" src="{% static "portal\files\assets\pages\dashboard\custom-dashboard.js" %}"></script> -->
+    <script type="text/javascript" src="{% static "portal\files\assets\pages\dashboard\custom-dashboard.js" %}"></script>
     <script type="text/javascript" src="{% static "portal\files\assets\js\script.min.js" %}"></script>
     <script type="text/javascript">
         function startTime() {
@@ -40,6 +40,11 @@
             document.getElementById('startTime').innerHTML = "00" + ":" + m + ":" + s;
           if(document.getElementById('endTime'))
             document.getElementById('endTime').innerHTML = "00" + ":" + (59 - m) + ":" + (60 - s);
+          progress = Math.round((m + s / 60) * 100 / 60);
+          if(document.getElementById('progress'))
+            document.getElementById('progress').innerHTML = progress + "%";
+          if(document.getElementById('progressBar'))
+            document.getElementById('progressBar').setAttribute("style", "width:" + progress + "%");
           var t = setTimeout(startTime, 500);
         }
         function checkTime(i) {
