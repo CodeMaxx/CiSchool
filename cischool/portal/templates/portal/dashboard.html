@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 
 <head>
@@ -17,16 +18,16 @@
     <meta name="keywords" content="Admin , Responsive, Landing, Bootstrap, App, Template, Mobile, iOS, Android, apple, creative app">
     <meta name="author" content="#">
     <!-- Favicon icon -->
-    <link rel="icon" href="..\files\assets\images\favicon.ico" type="image/x-icon">
+    <link rel="icon" href="{% static "portal\files\assets\images\favicon.ico" %}" type="image/x-icon">
     <!-- Google font-->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet">
     <!-- Required Fremwork -->
-    <link rel="stylesheet" type="text/css" href="..\files\bower_components\bootstrap\css\bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static "portal\files\bower_components\bootstrap\css\bootstrap.min.css" %}">
     <!-- feather Awesome -->
-    <link rel="stylesheet" type="text/css" href="..\files\assets\icon\feather\css\feather.css">
+    <link rel="stylesheet" type="text/css" href="{% static "portal\files\assets\icon\feather\css\feather.css" %}">
     <!-- Style.css -->
-    <link rel="stylesheet" type="text/css" href="..\files\assets\css\style.css">
-    <link rel="stylesheet" type="text/css" href="..\files\assets\css\jquery.mCustomScrollbar.css">
+    <link rel="stylesheet" type="text/css" href="{% static "portal\files\assets\css\style.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "portal\files\assets\css\jquery.mCustomScrollbar.css" %}">
 </head>
 
 <body onload="start()">
@@ -80,7 +81,7 @@
                             <i class="feather icon-menu"></i>
                         </a>
                         <a href="index-1.htm">
-                            <img class="img-fluid" src="..\files\assets\images\logo.png" style="max-height: 50px;" alt="Theme-Logo">
+                            <img class="img-fluid" src="{% static "portal\files\assets\images\logo.png" %}" style="max-height: 50px;" alt="Theme-Logo">
                         </a>
                         <a class="mobile-options">
                             <i class="feather icon-more-horizontal"></i>
@@ -109,7 +110,7 @@
                                         </li>
                                         <li>
                                             <div class="media">
-                                                <img class="d-flex align-self-center img-radius" src="..\files\assets\images\avatar-4.jpg" alt="Generic placeholder image">
+                                                <img class="d-flex align-self-center img-radius" src="{% static "portal\files\assets\images\avatar-4.jpg" %}" alt="Generic placeholder image">
                                                 <div class="media-body">
                                                     <h5 class="notification-user">Social Media Policy Activated!</h5>
                                                     <!-- <p class="notification-msg">Lorem ipsum dolor sit amet, consectetuer elit.</p> -->
@@ -123,7 +124,7 @@
                             <li class="user-profile header-notification">
                                 <div class="dropdown-primary dropdown">
                                     <div class="dropdown-toggle" data-toggle="dropdown">
-                                        <img src="..\files\assets\images\avatar-4.jpg" class="img-radius" alt="User-Profile-Image">
+                                        <img src="{% static "portal\files\assets\images\avatar-4.jpg" %}" class="img-radius" alt="User-Profile-Image">
                                         <span>John Doe</span>
                                         <i class="feather icon-chevron-down"></i>
                                     </div>
@@ -301,10 +302,10 @@
                                                         <div class="team-box p-b-20">
                                                             <!-- <p class="d-inline-block m-r-20 f-w-400">Students</p> -->
                                                             <div class="team-section d-inline-block">
-                                                                <a href="#! "><img src="..\files\assets\images\avatar-2.jpg" data-toggle="tooltip" title="Josephin Doe" alt=" "></a>
-                                                                <a href="#! "><img src="..\files\assets\images\avatar-3.jpg" data-toggle="tooltip" title="Lary Doe" alt=" " class="m-l-5 "></a>
-                                                                <a href="#! "><img src="..\files\assets\images\avatar-4.jpg" data-toggle="tooltip" title="Alia" alt=" " class="m-l-5 "></a>
-                                                                <a href="#! "><img src="..\files\assets\images\avatar-2.jpg" data-toggle="tooltip" title="Suzen" alt=" " class="m-l-5 "></a>
+                                                                <a href="#! "><img src="{% static "portal\files\assets\images\avatar-2.jpg" %}" data-toggle="tooltip" title="Josephin Doe" alt=" "></a>
+                                                                <a href="#! "><img src="{% static "portal\files\assets\images\avatar-3.jpg" %}" data-toggle="tooltip" title="Lary Doe" alt=" " class="m-l-5 "></a>
+                                                                <a href="#! "><img src="{% static "portal\files\assets\images\avatar-4.jpg" %}" data-toggle="tooltip" title="Alia" alt=" " class="m-l-5 "></a>
+                                                                <a href="#! "><img src="{% static "portal\files\assets\images\avatar-2.jpg" %}" data-toggle="tooltip" title="Suzen" alt=" " class="m-l-5 "></a>
                                                             </div>
                                                         </div>
                                                         <div class="progress-box">
@@ -335,10 +336,10 @@
                                                             <!-- <p class="d-inline-block m-r-20 f-w-400">Students</p> -->
                                                             <div class="team-section d-inline-block">
                                                                 <div class="team-section d-inline-block">
-                                                                    <a href="#! "><img src="..\files\assets\images\avatar-3.jpg" data-toggle="tooltip" title="Lary Doe" alt=" " class="m-l-5 "></a>
-                                                                    <a href="#! "><img src="..\files\assets\images\avatar-4.jpg" data-toggle="tooltip" title="Alia" alt=" " class="m-l-5 "></a>
-                                                                    <a href="#! "><img src="..\files\assets\images\avatar-5.jpg" data-toggle="tooltip" title="Josephin Doe" alt=" "></a>
-                                                                    <a href="#! "><img src="..\files\assets\images\avatar-7.jpg" data-toggle="tooltip" title="Suzen" alt=" " class="m-l-5 "></a>
+                                                                    <a href="#! "><img src="{% static "portal\files\assets\images\avatar-3.jpg" %}" data-toggle="tooltip" title="Lary Doe" alt=" " class="m-l-5 "></a>
+                                                                    <a href="#! "><img src="{% static "portal\files\assets\images\avatar-4.jpg" %}" data-toggle="tooltip" title="Alia" alt=" " class="m-l-5 "></a>
+                                                                    <a href="#! "><img src="{% static "portal\files\assets\images\avatar-5.jpg" %}" data-toggle="tooltip" title="Josephin Doe" alt=" "></a>
+                                                                    <a href="#! "><img src="{% static "portal\files\assets\images\avatar-7.jpg" %}" data-toggle="tooltip" title="Suzen" alt=" " class="m-l-5 "></a>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -517,27 +518,27 @@
 <![endif]-->
     <!-- Warning Section Ends -->
     <!-- Required Jquery -->
-    <script type="text/javascript" src="..\files\bower_components\jquery\js\jquery.min.js"></script>
-    <script type="text/javascript" src="..\files\bower_components\jquery-ui\js\jquery-ui.min.js"></script>
-    <script type="text/javascript" src="..\files\bower_components\popper.js\js\popper.min.js"></script>
-    <script type="text/javascript" src="..\files\bower_components\bootstrap\js\bootstrap.min.js"></script>
+    <script type="text/javascript" src="{% static "portal\files\bower_components\jquery\js\jquery.min.js" %}"></script>
+    <script type="text/javascript" src="{% static "portal\files\bower_components\jquery-ui\js\jquery-ui.min.js" %}"></script>
+    <script type="text/javascript" src="{% static "portal\files\bower_components\popper.js\js\popper.min.js" %}"></script>
+    <script type="text/javascript" src="{% static "portal\files\bower_components\bootstrap\js\bootstrap.min.js" %}"></script>
     <!-- jquery slimscroll js -->
-    <script type="text/javascript" src="..\files\bower_components\jquery-slimscroll\js\jquery.slimscroll.js"></script>
+    <script type="text/javascript" src="{% static "portal\files\bower_components\jquery-slimscroll\js\jquery.slimscroll.js" %}"></script>
     <!-- modernizr js -->
-    <script type="text/javascript" src="..\files\bower_components\modernizr\js\modernizr.js"></script>
+    <script type="text/javascript" src="{% static "portal\files\bower_components\modernizr\js\modernizr.js" %}"></script>
     <!-- Chart js -->
-    <script type="text/javascript" src="..\files\bower_components\chart.js\js\Chart.js"></script>
+    <script type="text/javascript" src="{% static "portal\files\bower_components\chart.js\js\Chart.js" %}"></script>
     <!-- amchart js -->
-    <script src="..\files\assets\pages\widget\amchart\amcharts.js"></script>
-    <script src="..\files\assets\pages\widget\amchart\serial.js"></script>
-    <script src="..\files\assets\pages\widget\amchart\light.js"></script>
-    <script src="..\files\assets\js\jquery.mCustomScrollbar.concat.min.js"></script>
-    <script type="text/javascript" src="..\files\assets\js\SmoothScroll.js"></script>
-    <script src="..\files\assets\js\pcoded.min.js"></script>
+    <script src="{% static "portal\files\assets\pages\widget\amchart\amcharts.js" %}"></script>
+    <script src="{% static "portal\files\assets\pages\widget\amchart\serial.js" %}"></script>
+    <script src="{% static "portal\files\assets\pages\widget\amchart\light.js" %}"></script>
+    <script src="{% static "portal\files\assets\js\jquery.mCustomScrollbar.concat.min.js" %}"></script>
+    <script type="text/javascript" src="{% static "portal\files\assets\js\SmoothScroll.js" %}"></script>
+    <script src="{% static "portal\files\assets\js\pcoded.min.js" %}"></script>
     <!-- custom js -->
-    <script src="..\files\assets\js\vartical-layout.min.js"></script>
-    <script type="text/javascript" src="..\files\assets\pages\dashboard\custom-dashboard.js"></script>
-    <script type="text/javascript" src="..\files\assets\js\script.min.js"></script>
+    <script src="{% static "portal\files\assets\js\vartical-layout.min.js" %}"></script>
+    <script type="text/javascript" src="{% static "portal\files\assets\pages\dashboard\custom-dashboard.js" %}"></script>
+    <script type="text/javascript" src="{% static "portal\files\assets\js\script.min.js" %}"></script>
     <script type="text/javascript">
         function startTime() {
           var today = new Date();

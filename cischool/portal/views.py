@@ -43,6 +43,16 @@ def logout(request):
 
 
 @login_required
+def register(request):
+	context = {'hello': 'world'}
+	return render(request, 'portal/register.html', context)
+
+@login_required
+def dashboard(request):
+	context = {'hello': 'world'}
+	return render(request, 'portal/dashboard.html', context)
+
+@login_required
 def courses(request):
 	user = request.user
 	instructor = Instructor.objects.get(user=user)
