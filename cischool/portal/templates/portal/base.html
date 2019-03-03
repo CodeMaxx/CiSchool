@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Adminty - Premium Admin Template by Colorlib </title>
+    <title>CiSchool</title>
     <!-- HTML5 Shim and Respond.js IE10 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 10]>
@@ -138,7 +138,7 @@
                                 <div class="dropdown-primary dropdown">
                                     <div class="dropdown-toggle" data-toggle="dropdown">
                                         <img src="{% static "portal\files\assets\images\avatar-4.jpg" %}" class="img-radius" alt="User-Profile-Image">
-                                        <span>John Doe</span>
+                                        <span>{{request.user.username}}</span>
                                         <i class="feather icon-chevron-down"></i>
                                     </div>
                                     <ul class="show-notification profile-notification dropdown-menu" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
@@ -168,7 +168,7 @@
                             <!-- <div class="pcoded-navigatio-lavel">Navigation</div> -->
                             <ul class="pcoded-item pcoded-left-item">
                                 <li class="active">
-                                    <a href="navbar-light.htm">
+                                    <a href="/dashboard">
                                         <span class="pcoded-micon"><i class="feather icon-home"></i></span>
                                         <span class="pcoded-mtext">Home</span>
                                     </a>
@@ -180,24 +180,24 @@
                                     </a>
                                     <ul class="pcoded-submenu">
                                         <li class="">
-                                            <a href="index-1.htm">
+                                            <a href="/venue/0">
                                                 <span class="pcoded-mtext">LCH 01</span>
                                             </a>
                                         </li>
                                         <li class="">
-                                            <a href="dashboard-crm.htm">
+                                            <a href="/venue/1">
                                                 <span class="pcoded-mtext">LCH 02</span>
                                             </a>
                                         </li>
                                         <li class=" ">
-                                            <a href="dashboard-analytics.htm">
+                                            <a href="/venue/2">
                                                 <span class="pcoded-mtext">LCH 03</span>
                                             </a>
                                         </li>
                                     </ul>
                                 </li>
                                 <li class="">
-                                    <a href="navbar-light.htm">
+                                    <a href="/courses">
                                         <span class="pcoded-micon"><i class="feather icon-clipboard"></i></span>
                                         <span class="pcoded-mtext">My Courses</span>
                                     </a>
@@ -209,7 +209,7 @@
                                     </a>
                                 </li>
                                 <li class="">
-                                    <a href="navbar-light.htm">
+                                    <a href="/history">
                                         <span class="pcoded-micon"><i class="feather icon-menu"></i></span>
                                         <span class="pcoded-mtext">History</span>
                                     </a>

@@ -10,7 +10,7 @@ class Venue(models.Model):
 
 class Slot(models.Model):
 	start = models.IntegerField() # 0 - 23 0 means from 00:00 to 00:59
-	day = models.IntegerField() # 0-6 0 is Sunday
+	day = models.IntegerField() # 0-6 0 is Monday
 
 
 class Instructor(models.Model):
@@ -58,6 +58,8 @@ class Policy(models.Model):
 
 
 class Course(models.Model):
+	name = models.CharField(max_length=50)
+	code = models.CharField(max_length=10)
 	lecture = models.ForeignKey(Lecture, on_delete=models.CASCADE)
 	instructor = models.ForeignKey(Instructor, on_delete=models.CASCADE)
 	students = models.ManyToManyField(Student)

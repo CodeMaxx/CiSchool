@@ -23,7 +23,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="card-footer">
-                                                        <p class="text-white m-b-0"><i class="feather icon-clock text-white f-14 m-r-10"></i>update : 2:15 am</p>
+                                                        <p class="text-white m-b-0"><i class="feather icon-clock text-white f-14 m-r-10"></i>Last updated : {{ last_updated }}</p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -41,7 +41,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="card-footer">
-                                                        <p class="text-white m-b-0"><i class="feather icon-clock text-white f-14 m-r-10"></i>update : 2:15 am</p>
+                                                        <p class="text-white m-b-0"><i class="feather icon-clock text-white f-14 m-r-10"></i>Last updated : {{ last_updated }}</p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -59,7 +59,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="card-footer">
-                                                        <p class="text-white m-b-0"><i class="feather icon-clock text-white f-14 m-r-10"></i>update : 2:15 am</p>
+                                                        <p class="text-white m-b-0"><i class="feather icon-clock text-white f-14 m-r-10"></i>Last updated : {{ last_updated }}</p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -77,7 +77,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="card-footer">
-                                                        <p class="text-white m-b-0"><i class="feather icon-clock text-white f-14 m-r-10"></i>update : 2:15 am</p>
+                                                        <p class="text-white m-b-0"><i class="feather icon-clock text-white f-14 m-r-10"></i>Last updated : {{ last_updated }}</p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -86,10 +86,10 @@
                                                 <div class="card app-design">
                                                     <div class="card-block">
                                                         <button class="btn btn-primary f-right">On Going</button>
-                                                        <h1 class="f-w-400 text-muted">CS 101</h1>
-                                                        <p class="text-c-blue f-w-400">Computer Programming and Utilization</p>
+                                                        <h1 class="f-w-400 text-muted">{{ next_course.code }}</h1>
+                                                        <p class="text-c-blue f-w-400">{{ next_course.name }}</p>
                                                         <div class="design-description d-inline-block m-r-40">
-                                                            <h3 class="f-w-400">30</h3>
+                                                            <h3 class="f-w-400">{{ next_course.total_students }}</h3>
                                                             <p class="text-muted">Students</p>
                                                         </div>
                                                         <div class="design-description d-inline-block">
@@ -117,12 +117,12 @@
                                             <div class="col-md-12 col-xl-6 ">
                                                 <div class="card app-design">
                                                     <div class="card-block">
-                                                        <button class="btn btn-success f-right">Starts at 4:00 PM</button>
-                                                        <h1 class="f-w-400 text-muted">CH 105</h1>
+                                                        <button class="btn btn-success f-right">Starts at {% now "H:00" %}</button>
+                                                        <h1 class="f-w-400 text-muted">{{ next_course.code }}</h1>
                                                         <!-- <p class="text-c-blue f-w-400">CH 105</p> -->
-                                                        <p class="text-c-green f-w-400">Inorganic Chemistry</p>
+                                                        <p class="text-c-green f-w-400">{{ next_course.name }}</p>
                                                         <div class="design-description d-inline-block m-r-40">
-                                                            <h3 class="f-w-400">25</h3>
+                                                            <h3 class="f-w-400">{{ next_course.total_students }}</h3>
                                                             <p class="text-muted">Students</p>
                                                         </div>
                                                         <div class="design-description d-inline-block">
@@ -143,7 +143,7 @@
                                                         <div class="progress-box">
                                                             <p class="d-inline-block m-r-20 f-w-400">Progress</p>
                                                             <div class="progress d-inline-block">
-                                                                <div class="progress-bar bg-c-green" style="width:0% "><label>-60:00</label></div>
+                                                                <div class="progress-bar bg-c-green" style="width:0% "><label>0%</label></div>
                                                             </div>
                                                         </div>
                                                     </div>
