@@ -74,6 +74,10 @@ def courses(request):
 def edit_course(request, pk):
 	pass
 
+@login_required
+def policy_toolbox(request):
+	context = {'hello': 'world'}
+	return render(request, 'portal/ptoolbox.html', context)
 
 @login_required
 def policies(request):
