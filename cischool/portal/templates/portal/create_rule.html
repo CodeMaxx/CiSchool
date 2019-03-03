@@ -75,7 +75,7 @@
 
                                                             <select name="custom_urls" id='custom_urls' class="searchable form-control form-control-primary" multiple='multiple'>
                                                                 {% for url in urls %}
-                                                                    <option value='{{ forloop.counter }}'>{{ url.name }} - {{ url.url }}</option>
+                                                                    <option value='{{ url.small_id }}'>{{ url.name }} - {{ url.url }}</option>
                                                                 {% endfor %}
                                                             </select>
                                                         </div>
@@ -90,7 +90,7 @@
                                                             <h4 class="sub-title">URL Categories</h4>
                                                             <select name="custom_categories" id='custom_categories' class="searchable form-control form-control-primary" multiple='multiple'>
                                                                 {% for cat in categories %}
-                                                                    <option value='{{ forloop.counter }}'>{{ cat.name }}</option>
+                                                                    <option value='{{ cat.small_id }}'>{{ cat.name }}</option>
                                                                 {% endfor %}
                                                             </select>
                                                         </div>

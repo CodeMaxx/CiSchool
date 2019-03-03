@@ -176,6 +176,8 @@ def create_url(request):
 		    if status_code == 201 or status_code == 202:
 		        print ("Post was successful...")
 		        json_resp = json.loads(resp)
+
+		        url = Url.objects.create(url=json_resp['url'], name=json_resp['name'], identity=json_resp['id'], desc=json_resp['description'])
 		        print(json.dumps(json_resp, sort_keys=True,
 		                         indent=4, separators=(',', ': ')))
 		        
@@ -187,6 +189,8 @@ def create_url(request):
 		finally:
 		    if r:
 		        r.close()
+
+
 		return redirect(reverse("portal:success"))
 
 
@@ -199,34 +203,38 @@ def create_rule(request):
 
 	if request.method == 'POST':
 		print(request.POST)
+		print(request.POST["custom_categories"])
+		auth_token = get_auth_token(server)
 		headers = {'Content-Type': 'application/json'}
 		headers['X-auth-access-token'] = auth_token
-		api_path = "/api/fmc_config/v1/domain/e276abec-e0f2-11e3-8169-6d9ed49b625f/policy/accesspolicies/{}/accessrules".format(request.POST["container"])    # param
+		container_id = Policy.objects.get(name=request.POST["container"]).identity
+		api_path = "/api/fmc_config/v1/domain/e276abec-e0f2-11e3-8169-6d9ed49b625f/policy/accesspolicies/{}/accessrules".format(container_id)    # param
 		url = server + api_path
 		if (url[-1] == '/'):
 		    url = url[:-1]
 
 		urls = []
-		for custom_url_id in request.POST["custom_urls"]:
-			url = Url.objects.get(small_id=custom_url_id)
+		for custom_url_id in request.POST.getlist("custom_urls"):
+			urll = Url.objects.get(small_id=custom_url_id)
 			ob = {
-				"name": url["name"],
+				"name": urll.name,
 				"type": "Url",
-				"id": url["id"]
+				"id": urll.identity
 			}
 			urls.append(ob)
 
 		urlcategories = []
-		for custom_category_id in request.POST["custom_categories"]:
-			category = UrlCategories.objects.get(small_id=custom_category_id)
+		for custom_category_id in request.POST.getlist("custom_categories"):
+			print(custom_category_id)
+			category = UrlCategories.objects.get(small_id=int(custom_category_id))
 			ob = {
 				"type": "UrlCategoryAndReputation",
 				"category": {
-					"name": category["name"],
-					"id": category["id"],
+					"name": category.name,
+					"id": category.identity,
 					"type": "URLCategory"
 				},
-				"reputation": category["reputation"]
+				"reputation": "HIGH_RISK"
 			}
 			urlcategories.append(ob)
 
@@ -289,6 +297,7 @@ def create_policy(request):
 	if request.method == 'GET':
 		return render(request, 'portal/create_policy.html')
 	elif request.method == 'POST':
+		print(request.POST)
 		auth_token = get_auth_token(server)
 		headers = {'Content-Type': 'application/json'}
 		headers['X-auth-access-token'] = auth_token
@@ -307,6 +316,7 @@ def create_policy(request):
 		  }
 		}
 
+		small_id = 0
 		try:
 		    # REST call with SSL verification turned off:
 		    r = requests.post(url, data=json.dumps(post_data),
@@ -320,6 +330,8 @@ def create_policy(request):
 		        print ("Post was successful...")
 		        json_resp = json.loads(resp)
 
+		        policy = Policy.objects.create(name=json_resp['name'], desc=json_resp['description'], identity=json_resp['id'])	
+		        small_id = policy.small_id
 		    else:
 		        r.raise_for_status()
 		        print ("Error occurred in POST --> " + resp)
@@ -328,11 +340,12 @@ def create_policy(request):
 		finally:
 		    if r:
 		        r.close()
-		return redirect("portal:edit_policies", id=1)
+		return redirect("portal:create_rule")
 
 
 def fetch_policy(request):
 	auth_token = get_auth_token(server)
+	headers = {'Content-Type': 'application/json'}
 	headers['X-auth-access-token'] = auth_token
 
 	idx = "005056BB-0B24-0ed3-0000-858993527846"
