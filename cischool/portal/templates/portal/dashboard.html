@@ -551,7 +551,7 @@
           document.getElementById('endTime').innerHTML =
           "00" + ":" + (59 - m) + ":" + (60 - s);
           document.getElementById('progress').innerHTML =
-          ((m + s / 60) * 100 / 60) + "%";
+          Math.round((m + s / 60) * 100 / 60) + "%";
           var t = setTimeout(startTime, 500);
         }
         function checkTime(i) {
