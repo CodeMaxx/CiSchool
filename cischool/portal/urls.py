@@ -27,6 +27,7 @@ urlpatterns = [
 	path('policytoolbox/policy', views.policy_edit, name='policyedit'),
 	path('policytoolbox/urlfilter', views.filter_edit, name='filteredit'),
 	path('policytoolbox/category', views.category_edit, name='categoryedit'),
+	path('policytoolbox/rule', views.rule_edit, name='ruleedit'),
 	path('courses/', views.courses, name='get_courses'),
 	path('dashboard/', views.dashboard, name='dashboard'),
 	path('courses/<int:pk>/edit/', views.edit_course, name='edit_course'),
