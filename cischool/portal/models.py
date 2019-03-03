@@ -55,7 +55,6 @@ class Policy(models.Model):
 	identity = models.CharField(max_length=100, primary_key=True)
 	rules = models.ManyToManyField(Rule)
 	action = models.CharField(max_length=15)
-	instructor = models.ForeignKey(Instructor, on_delete=models.CASCADE)
 
 
 class Course(models.Model):

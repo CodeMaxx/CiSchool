@@ -29,8 +29,10 @@ urlpatterns = [
 	path('courses/<int:pk>/edit/', views.edit_course, name='edit_course'),
 	path('mypolicies/', views.policies, name='my_policies'),
 	path('policy/', views.create_policy, name='create_policy'),
+	path('rule/', views.create_rule, name='create_rule'),
 	path('policy/<id>/', views.edit_policies, name='edit_policies'),
 	path('policy/fetch/', views.fetch_policy, name='fetch_policy'),
 	path('categories/', views.categories, name='categories'),
 	path('url/create/', views.create_url, name='create_url'),
+	path('success/', views.success, name='success'),
 ]
