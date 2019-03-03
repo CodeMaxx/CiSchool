@@ -72,7 +72,8 @@ def logout_view(request):
 
 @login_required
 def dashboard(request):
-	context = {'hello': 'world'}
+	context = {'hello': 'world',
+				'last_updated': datetime.datetime.now()}
 	return render(request, 'portal/dashboard.html', context)
 
 
