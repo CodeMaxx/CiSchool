@@ -29,14 +29,16 @@ class Lecture(models.Model):
 
 class Url(models.Model):
 	url = models.URLField()
-	identity = models.CharField(max_length=100, primary_key=True)
+	small_id = models.AutoField(primary_key=True)
+	identity = models.CharField(max_length=100)
 	name = models.CharField(max_length=50)
 	desc = models.CharField(max_length=150)
 
 
 class UrlCategories(models.Model):
 	name = models.CharField(max_length=30)
-	identity = models.CharField(max_length=100, primary_key=True)
+	small_id = models.AutoField(primary_key=True)
+	identity = models.CharField(max_length=100)
 	reputation = models.CharField(max_length=200)
 	link = models.URLField()
 
@@ -52,7 +54,8 @@ class Rule(models.Model):
 class Policy(models.Model):
 	name = models.CharField(max_length=50)
 	desc = models.CharField(max_length=150)
-	identity = models.CharField(max_length=100, primary_key=True)
+	small_id = models.AutoField(primary_key=True)
+	identity = models.CharField(max_length=100)
 	rules = models.ManyToManyField(Rule)
 	action = models.CharField(max_length=15)
 
