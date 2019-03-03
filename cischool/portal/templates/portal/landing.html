@@ -1,0 +1,110 @@
+﻿<!DOCTYPE html>
+{% load static %}
+<html lang="en-us" class="no-js">
+
+	<head>
+		<meta charset="utf-8">
+        <title>CiSchool</title>
+        <meta name="description" content="Comming soon page - flat able">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Codedthemes">
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="{% static "portal\landing\img\favicon.ico" %}">
+        <link rel="stylesheet" href="{% static "portal\landing\css\style-minimal-flat.css" %}">
+		<script src="{% static "portal\landing\js\modernizr.custom.js" %}"></script>
+	</head>
+
+    <body>
+
+    	<!-- Loading overlay -->
+		<div id="loading" class="dark-back">
+			<div class="loading-bar"></div>
+			<span class="loading-text opacity-0">Get Ready for the next generation of edutech revolution!</span>
+		</div>
+
+		<!-- Canvas for particles animation -->
+		<div id="particles-js"></div>
+
+        <!-- Slider Wrapper -->
+        <div id="slider" class="sl-slider-wrapper">
+
+			<div class="sl-slider">
+			
+				<!-- SLIDE 1 / Home -->
+				<div class="sl-slide bg-1" data-orientation="horizontal" data-slice1-rotation="-25" data-slice2-rotation="-25" data-slice1-scale="2" data-slice2-scale="2">
+					
+					<div class="sl-slide-inner">
+
+						<div class="content-slide">
+
+							<div class="container">
+
+								<img src="img\logo.png" alt="" class="brand-logo text-intro opacity-0">
+							
+								<h1 class="text-intro opacity-0">CiSchool</h1>
+							
+								<p class="text-intro opacity-0">Get Excited !!!<strong> Awesome Product</strong> by Ferozepurwale.
+                                <br> Login to get started.
+								</p>
+
+								<a href="/register/" class="action-btn trigger text-intro opacity-0">REGISTER</a>
+								<a href="/login/" class="action-btn trigger text-intro opacity-0">LOGIN</a>
+
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- END - SLIDE 1 / Home -->$
+
+			</div>
+			<!-- END - sl-slider -->
+
+			
+
+		</div>
+		<!-- END - Slider Wrapper -->
+		<!-- //////////////////////\\\\\\\\\\\\\\\\\\\\\\ -->
+	    <!-- ********** List of jQuery Plugins ********** -->
+	    <!-- \\\\\\\\\\\\\\\\\\\\\\////////////////////// -->
+		
+		<!-- * Libraries jQuery, Easing and Bootstrap - Be careful to not remove them * -->
+		<script src="{% static "portal\landing\js\jquery.min.js" %}"></script>
+		<script src="{% static "portal\landing\js\jquery.easings.min.js" %}"></script>
+		<script src="{% static "portal\landing\js\bootstrap.min.js" %}"></script>
+
+		<!-- SlitSlider plugin -->
+		<script src="{% static "portal\landing\js\jquery.ba-cond.min.js" %}"></script>
+		<script src="{% static "portal\landing\js\jquery.slitslider.js" %}"></script>
+
+		<!-- Newsletter plugin -->
+		<script src="{% static "portal\landing\js\notifyMe.js" %}"></script>
+
+		<!-- Popup Newsletter Form -->
+		<script src="{% static "portal\landing\js\classie.js" %}"></script>
+		<script src="{% static "portal\landing\js\dialogFx.js" %}"></script>
+
+		<!-- Particles effect plugin on the right -->
+		<script src="{% static "portal\landing\js\particles.js" %}"></script>
+
+		<!-- Custom Scrollbar plugin -->
+		<script src="{% static "portal\landing\js\jquery.mCustomScrollbar.js" %}"></script>
+
+		<!-- Countdown plugin -->
+		<script src="{% static "portal\landing\js\jquery.countdown.js" %}"></script>
+
+		<script>
+		$("#countdown")
+			// Year/Month/Day Hour:Minute:Second
+			.countdown("2018/10/24 15:30:30", function(event) {
+				$(this).html(
+					event.strftime('%D Days %Hh %Mm %Ss')
+				);
+		});
+		</script>
+
+		<!-- Main application scripts -->
+		<script src="{% static "portal\landing\js\main-flat.js" %}"></script>
+
+	</body>
+
+</html>
